@@ -1,61 +1,24 @@
-// FONT-FACE SETTINGS HERE
-/* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/3afa97");
-
-@font-face {
-    font-family: 'Mirador';
-    src: url("#{$font-path}3AFA97_0_0.eot");
-    src: url("#{$font-path}3AFA97_0_0.eot?#iefix") format("embedded-opentype"), 
-    url("#{$font-path}3AFA97_0_0.woff2") format("woff2"), 
-    url("#{$font-path}3AFA97_0_0.woff") format("woff"), 
-    url("#{$font-path}3AFA97_0_0.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mirador';
-  src: url("#{$font-path}3B067A_0_0.eot");
-  src: url("#{$font-path}3B067A_0_0.eot?#iefix") format("embedded-opentype"), 
-  url("#{$font-path}3B067A_0_0.woff2") format("woff2"), 
-  url("#{$font-path}3B067A_0_0.woff") format("woff"), 
-  url("#{$font-path}3B067A_0_0.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-    font-family: 'Matter';    
-    src: url("#{$font-path}Matter-Regular.eot");
-    src: url("#{$font-path}Matter-Regular?#iefix") format("embedded-opentype"), 
-    url("#{$font-path}Matter-Regular.woff2") format("woff2"), 
-    url("#{$font-path}Matter-Regular.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: 'Matter';    
-  src: url("#{$font-path}Matter-Medium.eot");
-  src: url("#{$font-path}Matter-Medium?#iefix") format("embedded-opentype"), 
-  url("#{$font-path}Matter-Medium.woff2") format("woff2"), 
-  url("#{$font-path}Matter-Medium.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
+/* @font-face {
+font-family:"europa";
+src:url("https://use.typekit.net/af/3e64fb/00000000000000003b9b12fe/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),
+url("https://use.typekit.net/af/3e64fb/00000000000000003b9b12fe/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),
+url("https://use.typekit.net/af/3e64fb/00000000000000003b9b12fe/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-display:auto;
+font-style:normal;
+font-weight:300;
+} */
 
 // TYPE-FACE SETTINGS
-$type-face-serif: "Mirador", serif !default;
-$type-face: "Matter", sans-serif !default;
+$type-face: 'europa', sans-serif !default;
 $font-weight: 300 !default;
 $font-weight-semibold: 300 !default;
 $font-weight-bold: 700 !default;
 
 // FONT-SIZE SETTINGS
-$font-settings-body: (null: (1.6rem, 2rem), lg: (1.8rem, 2.4rem)) !default;
+$font-settings-body: (null: (1.8rem, 2.6rem)) !default;
 
-$font-settings-h1: (null: (5rem, 1.1), lg: (5rem, 1.1)) !default;
+$font-settings-h1: (null: (8.2rem, 9rem)) !default;
 
-$font-settings-h2: (null: (2.5rem, 2.6rem), lg: (5rem, 5rem)) !default; 
+$font-settings-h2: (null: (6.0rem, 6.5rem)) !default; 
 
-$font-settings-h3: (null: (2.5rem, 1.54), lg: (2.5rem, 1.54)) !default;
+$font-settings-h3: (null: (3rem, 3.5rem)) !default;

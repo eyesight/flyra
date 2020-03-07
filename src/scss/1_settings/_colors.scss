@@ -2,5 +2,13 @@ $color-black: #000000 !default;
 $color-white: #ffffff !default;
 $color-backend: #1dd1a1 !default;
 
-$color-main-text: $color-black !default;
-$color-primary: $color-black !default;
+$color-blue-dark: #020440 !default; 
+$color-blue-sky: #0027FF !default;
+$color-blue-medium: #0076FF !default;
+$color-grey: #707070 !default;
+
+$color-main-text: $color-blue-dark !default;
+$color-primary: $color-blue-dark !default;
+$color-highlight: $color-blue-sky !default;
+$color-highlight-text: $color-blue-medium !default;
+$color-negative-text: $color-white !default;
