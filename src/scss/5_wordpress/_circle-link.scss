@@ -1,0 +1,87 @@
+.circle-link {
+    position: fixed;
+    right: 191px;
+    bottom: 201px;
+
+    &__svg-white,
+    &__svg-dark {
+        position: absolute;
+    }
+}
+
+.circle-link--white {
+    z-index: 10000;
+}
+
+.circle-link--dark {
+    z-index: 1000;
+}
+
+.circle-link__circle {
+    animation-duration: 10s;
+    animation-name: spin-circle ;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.circle-link__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+}
+
+.circle-link__svg {
+    overflow: hidden;
+}
+
+.circle-link__svg-white {
+    z-index: 1;
+}
+
+.circle-link__svg-dark {
+    z-index: -1;
+}
+
+.circle-link__svg-dark .Flug_buchen, 
+.circle-link__svg-dark .cls-2 {
+    fill: $color-blue-sky;
+}
+
+.cls-1 {
+    stroke: rgba(0,0,0,0);
+    font-size: 16px;
+    font-family: Europa-Bold;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.circle-link__svg-white .circle-link__text, 
+.circle-link__svg-white .cls-2 {
+    fill: #fff;
+}
+
+.circle-link__circle {
+    width: 150px;
+    height: 150px;
+    top: 0px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.circle-link__a:hover .circle-link__circle {
+    width: 170px;
+    height: 170px;
+    top: -10px;
+    left: -10px;
+    transition: all 0.3s ease;
+}
+
+@keyframes spin-circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}

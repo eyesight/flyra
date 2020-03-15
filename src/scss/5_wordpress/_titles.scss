@@ -1,0 +1,10 @@
+.title-h1 {
+    @include make-grid-item(14);
+    
+    &__text {
+        @include font($type-face, $font-weight-bold);
+        @include font-size($font-settings-h1);
+        text-align: center;
+        color: $color-white;
+    }
+} 

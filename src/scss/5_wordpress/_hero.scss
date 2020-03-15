@@ -1,0 +1,14 @@
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include make-grid-container($justify-content: center, $align-content: center);
+}
+
+.layout-centered {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+} 

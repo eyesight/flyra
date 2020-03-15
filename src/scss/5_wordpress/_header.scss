@@ -1,0 +1,24 @@
+.header {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    
+    .logo__svg {
+        fill: $color-primary;
+    }
+}   
+
+.header__logo-container{
+    z-index: 1000;
+    top: 30px;
+    left: 40px;
+    position: fixed;
+
+    &--white {
+        overflow: hidden;
+        z-index: 10000;
+        .logo__svg {
+            fill: $color-white;
+        }
+    }
+}

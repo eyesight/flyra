@@ -243,6 +243,18 @@ class Helper {
 		static removeCookie(name) {
 			this.setCookie(name,"",-1);
     }
+
+    static isElementinViewport(elem, positionTop = 0, positionLeft = 0){
+      const el = elem.getBoundingClientRect();
+      if (el.top >= positionTop && el.left >= positionLeft &&
+        el.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+        el.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    }
 }
 
 export default Helper;
