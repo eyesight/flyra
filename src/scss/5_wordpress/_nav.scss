@@ -47,11 +47,11 @@
             .nav__list-second-level { 
                 height: auto;
                 overflow: visible;
+                padding: 20px;
             }
             .nav__list-item-second-level {
                 opacity: 1;
                 transform: translateY(0);
-                transition: all 0.3s ease-in;
             }
         }
     }
@@ -62,6 +62,9 @@
         height: 0;
         overflow: hidden;
         width: 100%;
+        background-color: $color-highlight;
+        margin-left: -20px;
+        min-width: calc(100% + 40px);
     }
     
     &__list-item-second-level {
@@ -71,8 +74,12 @@
         transform: translateY(-10px);
         cursor: pointer;
 
+        &:first-child {
+            margin-top: 0;
+        }
+
         > a {
-            color: $color-primary;
+            color: $color-white;
             &:after {
                 content: "";
                 position: absolute;
@@ -84,10 +91,6 @@
                 transition: all 0.5s ease-in-out;
                 opacity: 0;
                 background-color: currentColor;
-            }
-
-            .nav--white &{
-                color: $color-white;
             }
         }    
 
