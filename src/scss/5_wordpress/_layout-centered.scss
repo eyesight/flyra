@@ -1,0 +1,5 @@
+.layout-centered {
+    @include full-width();
+    @include flexbox();
+    padding-left: $one-col;
+}

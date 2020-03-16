@@ -1,5 +1,6 @@
 $marginal-gutter: $gutter;
 $col-count: 26; // define how many collumns the general overlaying grid has 
+$one-col: 100% / $col-count * 1;
 
 // =============================================================================
 // Layout

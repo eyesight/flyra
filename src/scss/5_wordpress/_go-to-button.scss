@@ -1,0 +1,25 @@
+.go-to-button {
+    @include font-size($font-settings-go-down-btn);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    bottom: 45px;
+    color: $color-white;
+    @include flexbox(column, wrap, center, center);
+    cursor: pointer;
+
+    &__text {
+        @include ld-margin-bottom(15px);
+    }
+
+    &--white {
+        color: $color-white;
+    }
+
+    .arrow {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+}

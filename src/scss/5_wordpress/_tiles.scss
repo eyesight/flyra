@@ -1,0 +1,15 @@
+.tile {
+    @include make-offset-grid-item(9, 2);
+    position: relative;
+
+    &__image-wrapper {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

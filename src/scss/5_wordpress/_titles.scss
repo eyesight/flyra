@@ -8,3 +8,17 @@
         color: $color-white;
     }
 } 
+
+.title-h2 {
+    @include make-offset-grid-item(20, 2);
+    @include ld-margin-bottom(60px);
+
+    &__prelines {
+        @include font-size($font-settings-pretitles);
+    }
+    
+    &__title {
+        @include font-size($font-settings-h2);
+        @include font($type-face, $font-weight-bold);
+    }
+}

@@ -17,13 +17,11 @@ class CopyElements {
   bindEvents() {
     this.cloneEl(this.element);
   }
-
+ 
   cloneEl(el) {
     let classNames = el.classList.value;
-    console.log(classNames);
     let newClone = el.cloneNode(true);
     let parent = el.parentNode;
-    console.log(parent);
     Helper.addClass(newClone, classNames + '--white');
     parent.insertBefore(newClone, el);
   }
