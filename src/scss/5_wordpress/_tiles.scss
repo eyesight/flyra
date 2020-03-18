@@ -3,13 +3,62 @@
     position: relative;
 
     &__image-wrapper {
+        @include responsive-ratio-center(100%, 412, 312, 'img');
+        overflow: hidden;
+        @include ld-margin-bottom($space);
+    }
+    
+    &__icon-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color-white;
         width: 100%;
+        height: 100%;
+        @include flexbox(column, wrap, center, center);
+        background-color: rgba($color-primary, 0.8);
+        @include font-size($font-settings-tiles);
+        
+        svg {
+            @include ld-margin-bottom($space);
+        }
+    }
+    
+    &__title {
+        @include font-size($font-settings-h3);
+        @include font($type-face, $font-weight-bold);
+    }
+    
+    &__text-wrapper {
+        @include ld-margin-bottom($space);
     }
 
-    &__image {
+    &__button {
+        color: $color-blue-medium;
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        height: 20px;
+        @include flexbox(row, wrap, flex-start, center);
+        @include font-size($font-settings-links);
+        padding-left: 0;
+    }
+    
+    &__button-arrow {
+        background-image: url('../../dist/svg/Arrow-Link.min.svg');
+        background-position: left; /* Center the image */
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 10px;
+        display: block;
+        margin-left: 10px;
+        margin-bottom: -2px;
+        transform: translateX(0);
+        transition: transform 0.3s ease;
+
+        .tile__button:hover & {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
     }
 }
+
