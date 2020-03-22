@@ -1,0 +1,74 @@
+.scroll-element {
+    @include full-width();
+    @include flexbox();
+    
+    &__link{
+        width: 100% / $col-count * 9;
+        position: absolute;
+        padding-top: 25px;
+        left: 100% / $col-count * 3;
+        margin-left: 0;
+        
+        &--sticky {
+            margin-left: 0;
+           margin-bottom: 145px;
+       }
+    }
+    
+    &__title {
+        @include font-size($font-settings-h3);
+        @include font($type-face, $font-weight-bold);
+        @include ld-margin-bottom(20px);
+    }
+
+    &__list {
+        @include make-grid-item(12, 11);
+    }
+    
+    &__list-item {
+        @include font-size($font-settings-h2);
+        @include font($type-face, $font-weight-bold);
+        @include ld-margin-bottom(45px);
+        padding-left: 60px;
+
+        &:before {
+            content:'...';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__button {
+        color: $color-blue-sky;
+        width: 100%;
+        height: 20px;
+        @include flexbox(row, wrap, flex-start, center);
+        @include font-size($font-settings-links);
+        padding-left: 0;
+        cursor: pointer;
+    }
+    
+    &__button-arrow {
+        background-image: url('../../dist/svg/Arrow-Link.min.svg');
+        background-position: left; /* Center the image */
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 10px;
+        display: block;
+        margin-left: 10px;
+        margin-bottom: -2px;
+        transform: translateX(0);
+        transition: transform 0.3s ease;
+        
+        .scroll-element__link:hover & {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+    }
+
+
+    .layout-bg & {
+        color: $color-white;
+    }
+}

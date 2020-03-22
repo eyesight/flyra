@@ -3,6 +3,7 @@ import ToTop from './Classes/ToTop';
 import scrollOutHero from './Classes/scrollOutHero';
 import CopyElement from './Classes/CopyElements';
 import ChangeClassOnScroll from './Classes/ChangeClassOnScroll';
+import Sticky from './../../node_modules/sticky-js';
 
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
@@ -35,6 +36,8 @@ import ChangeClassOnScroll from './Classes/ChangeClassOnScroll';
       overElement: '.service-nav--white',
       isHeight: false
     });
+
+    new Sticky('.scroll-element__link');
 
   });
 })();   

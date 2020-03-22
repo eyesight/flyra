@@ -1,5 +1,4 @@
 .layout-centered {
-    @include full-width();
     @include flexbox();
-    padding-left: $one-col;
+    @include ld-margin-bottom(145px);
 }

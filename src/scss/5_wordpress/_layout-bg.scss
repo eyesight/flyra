@@ -1,0 +1,14 @@
+.layout-bg {
+    @include ld-margin-bottom(145px);
+    background-color: $color-primary;
+    padding-top: 145px;
+    padding-bottom: 145px;
+    
+    a {
+        color: $color-white;
+    }
+    
+    &__inner {
+        @include flexbox();
+    }
+}

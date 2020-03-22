@@ -1,0 +1,28 @@
+.info-tile-wrapper {
+    @include full-width();
+    @include flexbox();
+    @include ld-margin-bottom(130px);
+} 
+
+.info-tile {
+    @include make-grid-item(9, 3);
+    @include ld-margin-bottom(60px);
+    
+    &:nth-of-type(-n + 2) {
+        margin-top: 60px;
+    }
+    
+    &:nth-of-type(even) {
+        @include make-grid-item(9, 2);
+    }
+    
+    &__icon {
+        @include ld-margin-bottom(30px);
+    }
+    
+    &__title {
+        @include ld-margin-bottom(30px);
+        @include font-size($font-settings-h3);
+        @include font($type-face, $font-weight-bold);
+    }
+}

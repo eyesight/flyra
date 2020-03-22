@@ -10,14 +10,17 @@
 } 
 
 .title-h2 {
-    @include make-offset-grid-item(20, 2);
+    @include full-width();
     @include ld-margin-bottom(60px);
-
-    &__prelines {
+    @include ld-margin-bottom(0, '.tiles-wrapper');
+    
+    &__preline {
+        @include make-grid-item(20, 3);
         @include font-size($font-settings-pretitles);
     }
     
     &__title {
+        @include make-grid-item(20, 3);
         @include font-size($font-settings-h2);
         @include font($type-face, $font-weight-bold);
     }
