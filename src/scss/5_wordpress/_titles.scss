@@ -24,4 +24,8 @@
         @include font-size($font-settings-h2);
         @include font($type-face, $font-weight-bold);
     }
+
+    .layout-bg & {
+        color: $color-white;
+    }
 }

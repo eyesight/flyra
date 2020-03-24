@@ -1,0 +1,59 @@
+.tile-blue-wrapper {
+    @include full-width();
+    @include flexbox(row, wrap, flex-start, stretch);
+    @include ld-margin-bottom(130px);
+} 
+
+.tile-blue {
+    @include make-grid-item(9, 3);
+    @include ld-margin-bottom(60px);
+    background-color: $color-blue-sky;
+    color: $color-white;
+    padding: 30px 45px 45px;
+    
+    &:nth-of-type(-n + 2) {
+        margin-top: 60px;
+    }
+    
+    &:nth-of-type(even) {
+        @include make-grid-item(9, 2);
+    }
+    
+    &__icon {
+        @include ld-margin-bottom(30px);
+    }
+    
+    &__title {
+        @include ld-margin-bottom(30px);
+        @include font-size($font-settings-h3);
+        @include font($type-face, $font-weight-bold);
+    }
+
+    &__button {
+        color: $color-primary;
+        width: 100%;
+        height: 20px;
+        @include flexbox(row, wrap, flex-start, center);
+        @include font-size($font-settings-links);
+        cursor: pointer;
+        padding-left: 0;
+    }
+    
+    &__button-arrow {
+        background-image: url('../../dist/svg/Arrow-Link2.min.svg');
+        background-position: left; /* Center the image */
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 10px;
+        display: block;
+        margin-left: 10px;
+        margin-bottom: -2px;
+        transform: translateX(0);
+        transition: transform 0.3s ease;
+        
+        .tile-blue:hover & {
+            transform: translateX(5px);
+            transition: transform 0.3s ease;
+        }
+    }
+}
