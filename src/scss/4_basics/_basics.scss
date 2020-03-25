@@ -113,3 +113,7 @@ figure{
 strong{
   font-weight: 700;
 }
+
+.content {
+  @include ld-margin-bottom(80px);
+}
