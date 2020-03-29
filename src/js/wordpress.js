@@ -4,6 +4,7 @@ import scrollOutHero from './Classes/scrollOutHero';
 import CopyElement from './Classes/CopyElements';
 import ChangeClassOnScroll from './Classes/ChangeClassOnScroll';
 import Sticky from './../../node_modules/sticky-js';
+import isInViewport from './Classes/isInViewport';
 
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
@@ -38,6 +39,11 @@ import Sticky from './../../node_modules/sticky-js';
     });
 
     new Sticky('.scroll-element__link');
+    new Sticky('.category-title');
 
+    new isInViewport({
+      element: '.category-title',
+      className: 'is-in-viewport'
+    });
   });
 })();   

@@ -5,7 +5,12 @@
 }
 
 .category-title {
-    @include make-grid-item(5, 3);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.3s ease-in, transform 0.5s ease-in;
+    @include make-grid-item-absolute(5, 3);
 
     &__icon {
         @include ld-margin-bottom($space-mm);
@@ -21,10 +26,16 @@
         @include font($type-face, $font-weight-bold);
         @include ld-margin-bottom($space-mm);
     }
+
+    &.is-in-viewport {
+        opacity: 1;
+        transform: translateY(0px);
+        transition: opacity 0.3s ease-in, transform 0.5s ease-in;
+    }
 }
 
 .category-items-wrapper {
-    @include make-grid-item(13, 2);
+    @include make-grid-item(13, 10);
 }
 
 .category-item {
