@@ -1,12 +1,14 @@
-.read-more {
+.arrow-link {
     color: $color-blue-sky;
-    width: 100%;
+    @include make-grid-item(5);
+    margin-left: auto;
+    margin-right: auto;
     height: 20px;
     @include flexbox(row, wrap, flex-start, center);
     @include font-size($font-settings-links);
     cursor: pointer;
     padding-left: 0;
-    @include flexbox(row, wrap, center, center);
+    @include flexbox(row, wrap, center, flex-end);
 
     &:hover {
         color: $color-blue-sky;
@@ -20,13 +22,21 @@
         height: 10px;
         display: block;
         margin-left: 10px;
-        margin-bottom: -2px;
+        margin-bottom: 5px;
         transform: translateX(0);
         transition: transform 0.3s ease;
         
-        .read-more:hover & {
-            transform: translateX(5px);
+        .arrow-link:hover & {
+            transform: translateX(10px);
             transition: transform 0.3s ease;
+        }
+    }
+
+    .categories & {
+        width: 100%;
+
+        &__button-text {
+            width: calc(100% - 45px);
         }
     }
 }

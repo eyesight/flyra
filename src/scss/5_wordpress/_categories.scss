@@ -1,0 +1,121 @@
+.categories {
+    @include full-width();
+    @include flexbox();
+    @include ld-margin-bottom($space-l);
+}
+
+.category-title {
+    @include make-grid-item(5, 3);
+
+    &__icon {
+        @include ld-margin-bottom($space-mm);
+    }
+    
+    &__pretitle {
+        @include font-size($font-settings-tiles);
+        @include ld-margin-bottom($space-sm);
+    }
+    
+    &__title {
+        @include font-size($font-settings-h3);
+        @include font($type-face, $font-weight-bold);
+        @include ld-margin-bottom($space-mm);
+    }
+}
+
+.category-items-wrapper {
+    @include make-grid-item(13, 2);
+}
+
+.category-item {
+    @include ld-margin-bottom($space-l);
+
+    &__image-wrapper {
+        @include ld-margin-bottom($space-mm);
+        img {
+            width: 100%;
+        }
+    }
+
+    &__title-wrapper {
+        @include ld-margin-bottom($space-sm);
+    }
+    
+    &__title {
+        @include font-size($font-settings-h2);
+        @include font($type-face, $font-weight-bold);
+        @include ld-margin-bottom($space-sm);
+    }
+    
+    &__sevice-list {
+        @include flexbox();
+        @include ld-margin-bottom($space-sm);
+    }
+    
+    &__service-list-item {  
+        @include flexbox(row, wrap, flex-start, center);
+        padding-right: 45px;
+        
+        &:last-child {
+            padding-right: 0px;
+        }
+    }
+    
+    &__icon {
+        margin-right: 10px;
+        
+        &--mountain {
+            margin-bottom: 4px;
+        }
+    }
+
+    &__places {
+        @include ld-margin-bottom($space-sm);
+    }
+    
+    &__places-bold {
+        @include font($type-face, $font-weight-bold);
+        padding-right: 10px;
+    }
+    
+    &__places-item {
+        padding-right: 10px;
+        
+        &:after {
+            content: '';
+            background-image: url('../svg/Icon-Gebiet.min.svg');
+            background-size: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 17px;
+            height: 17px;
+            display: inline-block;
+        }
+        
+        &:hover,
+        &:focus,
+        &:active {
+            color: $color-blue-sky;
+            
+            &:after {
+                animation: icon-place 2s linear 0s infinite;
+            }
+        }
+    }
+
+    &__text {
+        @include ld-margin-bottom(40px);
+    }
+    
+    &__big-text {
+        @include font($type-face, $font-weight-bold);
+        @include font-size($font-settings-h3);
+    }
+}
+
+@keyframes icon-place {
+    0% {transform: translateY(0px);}
+    25% {transform: translateY(-5px);}
+    50% {transform: translateY(0px);}
+    100% {transform: translateY(0px);}
+  }

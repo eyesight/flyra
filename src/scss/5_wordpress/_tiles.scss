@@ -1,7 +1,7 @@
 .tiles-wrapper {
     @include full-width();
     @include flexbox();
-    @include ld-margin-bottom(130px);
+    @include ld-margin-bottom($space-xl);
 }
 
 .tile {
@@ -11,7 +11,7 @@
 
     &__image-wrapper {
         @include responsive-ratio-center(100%, 412, 312, 'img');
-        @include ld-margin-bottom($space);
+        @include ld-margin-bottom($space-mm);
         overflow: hidden;
     }
     
@@ -28,7 +28,7 @@
         @include font-size($font-settings-tiles);
         
         svg {
-            @include ld-margin-bottom($space);
+            @include ld-margin-bottom($space-mm);
         }
     }
     
@@ -42,7 +42,7 @@
     }
     
     &__text-wrapper {
-        @include ld-margin-bottom($space);
+        @include ld-margin-bottom($space-mm);
     }
     
     &__button {

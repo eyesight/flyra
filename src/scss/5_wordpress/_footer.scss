@@ -10,7 +10,7 @@
     }
 
     &__top {
-        @include ld-margin-bottom(50px);
+        @include ld-margin-bottom($space-m);
     }
     
     &__bottom {
@@ -45,11 +45,11 @@
 
     &__h4 {
         @include font($type-face, $font-weight-bold);
-        @include ld-margin-bottom(20px);
+        @include ld-margin-bottom($space-sm);
     }
 
     &__center-item {
-        @include ld-margin-bottom(20px); 
+        @include ld-margin-bottom($space-sm); 
     }
     
     &__center-nav-link {
