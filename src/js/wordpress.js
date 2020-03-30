@@ -39,10 +39,9 @@ import isInViewport from './Classes/isInViewport';
     });
 
     new Sticky('.scroll-element__link');
-    new Sticky('.category-title');
 
     new isInViewport({
-      element: '.category-title',
+      element: '.categories',
       className: 'is-in-viewport'
     });
   });

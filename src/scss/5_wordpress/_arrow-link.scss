@@ -3,7 +3,7 @@
     @include make-grid-item(5);
     margin-left: auto;
     margin-right: auto;
-    height: 20px;
+    height: auto;
     @include flexbox(row, wrap, flex-start, center);
     @include font-size($font-settings-links);
     cursor: pointer;

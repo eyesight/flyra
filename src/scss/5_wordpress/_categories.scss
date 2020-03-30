@@ -7,11 +7,22 @@
 .category-title {
     position: absolute;
     top: 0;
-    opacity: 0;
-    transform: translateY(100px);
-    transition: opacity 0.3s ease-in, transform 0.5s ease-in;
+    overflow: hidden;
+    
+    > * {
+        opacity: 0;
+        transform: translateY(300px);
+        transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+    }
     @include make-grid-item-absolute(5, 3);
 
+    .categories:nth-child(2) & {
+        > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
     &__icon {
         @include ld-margin-bottom($space-mm);
     }
@@ -27,10 +38,37 @@
         @include ld-margin-bottom($space-mm);
     }
 
-    &.is-in-viewport {
-        opacity: 1;
-        transform: translateY(0px);
-        transition: opacity 0.3s ease-in, transform 0.5s ease-in;
+    &__link {
+        height: auto;
+    }
+    
+    .is-sticky & {
+        @include make-grid-item-absolute(5, 3);
+        position: fixed;
+        top: 130px;
+
+        > * {
+            transform: translateY(0px);
+            opacity: 1;
+            transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+        }
+    }
+    
+    .is-out &,
+    .is-out.categories:nth-child(2) & {
+        > * {
+            transform: translateY(-300px);
+            opacity: 0;
+            transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+        }
+    }
+    
+    .is-out-last &{
+        left: 100% / $col-count * 3 !important;
+        width: 100% / $col-count * 5 !important;
+        position: absolute;
+        top: auto;
+        bottom: 0;
     }
 }
 
