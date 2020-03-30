@@ -6,7 +6,7 @@
 
 .tile {
     @include make-grid-item(9, 3);
-    @include ld-margin-bottom(90px);
+    @include ld-margin-bottom($space-lm);
     position: relative;
 
     &__image-wrapper {

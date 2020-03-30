@@ -11,4 +11,8 @@
     &__inner {
         @include flexbox();
     }
+
+    .blue &{
+        background-color: transparent;
+    }
 }

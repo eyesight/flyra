@@ -9,10 +9,10 @@ class scrollOutHero {
     this.hero = document.querySelector(backgroundElement);
     this.element = document.querySelector(overElement);
     this.isScrolledDown = true;
-    this.buttonHeight = isHeight ? this.element.offsetHeight : this.element.offsetWidth;
     this.isHeight = isHeight;
-
+    
     if(this.hero && this.element){
+      this.buttonHeight = isHeight ? this.element.offsetHeight : this.element.offsetWidth;
       this.bindEvents();
     }
   }

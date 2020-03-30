@@ -10,7 +10,7 @@ class ChangeClassOnScroll {
     this.hero = document.querySelector(backgroundElement);
     this.element = document.querySelector(overElement);
     this.isScrolledDown = true;
-    this.buttonHeight = this.element.offsetHeight;
+    this.buttonHeight = this.element ? this.element.offsetHeight : 0;
 
     if(this.hero && this.element){
       this.bindEvents();

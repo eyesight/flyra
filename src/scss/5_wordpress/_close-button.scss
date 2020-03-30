@@ -1,0 +1,27 @@
+.close-button{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+
+    &__link {
+        width: 30px;
+        height: 30px;
+        display: block;
+        padding: 10px;
+    }
+
+    &__line {
+        width: 20px;
+        height: 2px;
+        background-color: $color-white;
+        display: block;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 10px;
+        left: 0;
+        
+        &:first-child {
+            transform: rotate(-45deg);
+        }
+    }
+}

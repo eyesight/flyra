@@ -10,11 +10,11 @@ class isInViewport {
     this.elements = Array.prototype.slice.call(document.querySelectorAll(element));
     this.className = className;
     this.titleElement = document.querySelector('.category-title');
-    this.titleElementLeft = this.titleElement.style.left;
-    this.titleElementWidth = this.titleElement.style.width;
-    this.footer = document.querySelector('footer').getBoundingClientRect().top;
-    
-    if(this.elements.length > 0){
+
+    if(this.elements.length > 0 && this.titleElement){
+      this.titleElementLeft = this.titleElement.style.left;
+      this.titleElementWidth = this.titleElement.style.width;
+      this.footer = document.querySelector('footer').getBoundingClientRect().top;
       this.bindEvents();
     }
   }

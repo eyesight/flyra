@@ -5,5 +5,5 @@
     background-position: center center;
     background-repeat: no-repeat;
     @include make-grid-container($justify-content: center, $align-content: center);
-    @include ld-margin-bottom(90px);
+    @include ld-margin-bottom($space-lm);
 }

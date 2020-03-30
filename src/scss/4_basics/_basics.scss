@@ -117,3 +117,7 @@ strong{
 .content {
   @include ld-margin-bottom(80px);
 }
+
+.blue {
+  background-color: $color-blue-sky;
+}

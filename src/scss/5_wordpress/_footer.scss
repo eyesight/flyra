@@ -33,6 +33,18 @@
     
     &__info-right {
         text-align: right;
+
+        .blue & {
+            a {
+                color: $color-white;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-primary;
+                }
+            }
+        }
     }
     
     &__bottom-ul {
@@ -54,16 +66,62 @@
     
     &__center-nav-link {
         @include font($type-face, $font-weight-bold);
+        .blue &{
+            color: $color-white;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $color-primary;
+            }
+        }
     }
 
     &__bottom-nav-link {
         padding-left: 10px;
         padding-right: 10px;
         border-left: 1px solid $color-primary;
+        
+        .blue & {
+            border-left: 1px solid $color-white;
+            color: $color-white;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $color-primary;
+            }
+        }
     }
 
     &__left-item {
         @include ld-margin-bottom(5px);
+
+        a {
+            .blue &{
+                color: $color-white;
+            
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+
+    &__right-item {
+        .blue &{    
+            a {
+                color: $color-white;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-primary;
+                }
+            }
+        }
     }
 
     &__copyright {
@@ -74,5 +132,9 @@
     a:focus,
     a:active {
         color: $color-blue-sky;
+    }
+
+    .blue &{
+        color: $color-white;
     }
 }

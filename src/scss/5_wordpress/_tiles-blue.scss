@@ -37,6 +37,10 @@
         @include font-size($font-settings-links);
         cursor: pointer;
         padding-left: 0;
+
+        .blue & {
+           color: $color-blue-sky;
+        }
     }
     
     &__button-arrow {
@@ -56,4 +60,12 @@
             transition: transform 0.3s ease;
         }
     }
+
+    .blue & {
+        background-color: $color-primary;
+    }
+}
+
+.blue .tile-blue__button-arrow {
+    background-image: url(../../dist/svg/Arrow-Link-white.min.svg);
 }
