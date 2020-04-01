@@ -69,13 +69,45 @@
     transition: all 0.3s ease;
 }
 
-.circle-link__a:hover .circle-link__circle {
-    width: 170px;
-    height: 170px;
+.circle-link__a {
+    top: 0px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.circle-link__a:hover {
     top: -10px;
     left: -10px;
     transition: all 0.3s ease;
 }
+
+.circle-link__a:hover .circle-link__circle,
+.circle-link__a:hover .circle-link__svg {
+    width: 170px;
+    height: 170px;
+    top: 0px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.circle-link__a:hover .circle-link__circle {
+    width: 170px;
+    height: 170px;
+    transition: all 0.3s ease;
+} 
+
+.circle-link__a .circle-link__text {
+    top: 0px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.circle-link__a:hover .circle-link__text {
+    top: 10px;
+    left: 10px;
+    transition: all 0.3s ease;
+}
+
 
 @keyframes spin-circle {
     0% {
