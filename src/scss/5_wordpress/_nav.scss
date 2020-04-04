@@ -9,7 +9,7 @@
         @include flexbox(row, wrap, flex-end, flex-start);
     }
 
-    &__item {
+    &__item-level-0 {
         margin-left: 30px;
         > a {
             color: $color-primary;
@@ -17,7 +17,7 @@
                 content: "";
                 position: absolute;
                 bottom: -10px;
-                left: 0;
+                left: 0; 
                 width: 0px;
                 height: 2px;
                 margin: 2px 0 0;
@@ -32,7 +32,8 @@
         }    
 
         &:hover > a,
-        &.active > a {
+        &.active > a,
+        &.nav__item--active > a {
             cursor: pointer;
             &:before,
             &:after {
@@ -43,31 +44,32 @@
 
         &:hover,
         &:focus,
-        &.active {
-            .nav__list-second-level { 
+        &.active,
+        &.nav__item--active {
+            .nav__level-1 { 
                 height: auto;
                 overflow: visible;
                 padding: 20px;
             }
-            .nav__list-item-second-level {
+            .nav__item-level-1 {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
     }
 
-    &__list-second-level {
+    &__level-1 {
         position: absolute;
         top: 30px;
         height: 0;
         overflow: hidden;
-        width: 100%;
+        width: auto;
         background-color: $color-highlight;
         margin-left: -20px;
         min-width: calc(100% + 40px);
     }
     
-    &__list-item-second-level {
+    &__item-level-1 {
         margin-top: 15px;
         opacity: 0;
         transition: all 0.3s ease-in;
@@ -80,6 +82,7 @@
 
         > a {
             color: $color-white;
+            white-space: nowrap;
             &:after {
                 content: "";
                 position: absolute;
@@ -95,6 +98,7 @@
         }    
 
         &:hover > a,
+        &.nav__item--active > a,
         &.active > a { 
             cursor: pointer;
             &:before,

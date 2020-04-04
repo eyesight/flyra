@@ -60,11 +60,15 @@
         @include ld-margin-bottom($space-sm);
     }
 
-    &__center-item {
+    &__center-item,
+    &__center-nav .footer__nav-item-level-0,
+    &__center-nav .footer__nav-item-level-1 {
         @include ld-margin-bottom($space-sm); 
     }
     
-    &__center-nav-link {
+    &__center-nav-link,
+    &__center-nav .footer__link-level-0,
+    &__center-nav .footer__link-level-1 {
         @include font($type-face, $font-weight-bold);
         .blue &{
             color: $color-white;
@@ -77,7 +81,9 @@
         }
     }
 
-    &__bottom-nav-link {
+    &__bottom-nav-link,
+    &__service-nav .footer__link-level-0,
+    &__service-nav .footer__link-level-1 {
         padding-left: 10px;
         padding-right: 10px;
         border-left: 1px solid $color-primary;
@@ -94,7 +100,12 @@
         }
     }
 
-    &__left-item {
+    &__service-nav .footer__nav-item-level-0 {
+        @include ld-margin-bottom(0);
+    }
+
+    &__left-item,
+    &__nav-item-level-0 {
         @include ld-margin-bottom(5px);
 
         a {
