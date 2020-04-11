@@ -1,5 +1,5 @@
-//const url = './dist';
 const url = './../flyra/wp-content/themes/flyra/dist';
+//const url = './dist';
 
 export const config = {
 

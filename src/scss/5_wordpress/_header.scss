@@ -1,15 +1,13 @@
 .header {
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     width: 100vw;
     height: 100px;
+    top: 0;
     
     .logo__svg {
         fill: $color-primary;
-    }
-
-    .blue & {
-        position: relative;
-    }
+    } 
 }   
 
 .header__logo-container{

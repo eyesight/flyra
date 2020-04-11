@@ -11,17 +11,17 @@
 
     &__icon {
         @include ld-margin-bottom($space-mm);
+
+        svg path{
+            stroke: $color-blue-dark !important;
+            fill: $color-blue-dark !important;
+        }
     }
     
     &__title {
         @include ld-margin-bottom($space-mm);
         @include font-size($font-settings-h3);
         @include font($type-face, $font-weight-bold);
-        color: $color-white;
-    }
-
-    &__text {
-        color: $color-white;
     }
 
     &:nth-of-type(-n + 2) {
@@ -30,5 +30,13 @@
     
     &:nth-of-type(even) {
         @include make-grid-item(9, 2);
+    }
+
+    .blue & &__title {
+        color: $color-white;
+    }
+
+    .blue & &__text {
+        color: $color-white;
     }
 }

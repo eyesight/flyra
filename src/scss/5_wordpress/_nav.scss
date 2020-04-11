@@ -44,8 +44,7 @@
 
         &:hover,
         &:focus,
-        &.active,
-        &.nav__item--active {
+        &.active {
             .nav__level-1 { 
                 height: auto;
                 overflow: visible;
