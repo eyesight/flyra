@@ -38,7 +38,8 @@
     &:first-of-type {
         margin-top: 150px; 
 
-        .layout-bg & {
+        .layout-bg &,
+        .layout-centered & {
             margin-top: 0;
         }
     }
