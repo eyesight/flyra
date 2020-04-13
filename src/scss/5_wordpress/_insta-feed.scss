@@ -1,0 +1,36 @@
+.insta-feed {
+    @include full-width();
+    @include flexbox();
+    @include ld-margin-bottom($space-xl);
+
+    &__feed {
+        @include make-grid-item(20, 3);
+    }
+
+    &__icon {
+        margin-bottom: -14px;
+    }
+
+    #sb_instagram #sbi_load .sbi_load_btn, 
+    #sb_instagram .sbi_follow_btn a {
+        background-color: transparent;
+        color: $color-blue-sky;
+        @include font-size($font-settings-links);
+        
+        &:hover {
+            background-color: transparent;
+            color: $color-primary;
+            box-shadow: none;
+        }
+    }
+
+    #sb_instagram .sbi_loader {
+        background-color: $color-blue-sky !important; 
+        opacity: 1 !important;
+    }
+
+    #sb_instagram .sbi_loader.sbi_hidden {
+        background-color: transparent !important;
+        opacity: 0 !important;
+    }
+}

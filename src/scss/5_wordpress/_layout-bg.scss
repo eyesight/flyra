@@ -3,6 +3,7 @@
     background-color: $color-primary;
     padding-top: 145px;
     padding-bottom: 145px;
+    color: $color-white;
     
     a {
         color: $color-white;
@@ -10,9 +11,25 @@
     
     &__inner {
         @include flexbox();
+        @include full-width();
+
+        .title-h2__preline,
+        .title-h2__title{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    
+    &__img-wrapper {
+        @include make-grid-item(5, 3);
+    }
+    
+    &__text-wrapper {
+        @include make-grid-item(14, 1);
     }
 
     .blue &{
         background-color: transparent;
+        padding-top: 0;
     }
 }

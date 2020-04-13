@@ -12,10 +12,12 @@
 .title-h2 {
     @include full-width();
     @include ld-margin-bottom(60px);
+    @include ld-margin-bottom(20px, '.layout-bg__text');
     @include ld-margin-bottom(0, '.tiles-wrapper');
     
     &__preline {
         @include make-grid-item(20, 3);
+        @include ld-margin-bottom(20px);
         @include font-size($font-settings-pretitles);
     }
     
@@ -33,7 +35,11 @@
         color: $color-white;
     }
 
-    .conent > & {
+    &:first-of-type {
         margin-top: 150px; 
+
+        .layout-bg & {
+            margin-top: 0;
+        }
     }
 }

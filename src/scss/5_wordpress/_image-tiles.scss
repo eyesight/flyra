@@ -1,27 +1,29 @@
-.text-tiles-wrapper {
+.image-tiles-wrapper {
     @include full-width();
     @include flexbox();
     @include ld-margin-bottom($space-xl);
 }
 
-.text-tiles {
+.image-tiles {
     @include make-grid-item(9, 3);
     @include ld-margin-bottom($space-l);
     position: relative;
-
-    &__icon {
-        @include ld-margin-bottom($space-mm);
-
-        svg path{
-            stroke: $color-blue-dark !important;
-            fill: $color-blue-dark !important;
-        }
-    }
     
     &__title {
         @include ld-margin-bottom($space-mm);
         @include font-size($font-settings-h3);
         @include font($type-face, $font-weight-bold);
+    }
+    
+    &__subtitle {
+        @include ld-margin-bottom($space-mm);
+    }
+    
+    &__link {
+        margin-left: 0;
+        width: 100%;
+        @include flexbox(row, wrap, flex-start, center);
+        @include ld-margin-bottom($space-mm);
     }
 
     &:nth-of-type(-n + 2) {
@@ -30,20 +32,5 @@
     
     &:nth-of-type(even) {
         @include make-grid-item(9, 2);
-    }
-
-    .blue & &__title {
-        color: $color-white;
-    }
-
-    .blue & &__text {
-        color: $color-white;
-    }
-
-    .blue & &__icon {
-        svg path{
-            stroke: $color-white !important;
-            fill: $color-white !important;
-        }
     }
 }
