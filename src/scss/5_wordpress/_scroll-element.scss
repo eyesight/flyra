@@ -25,7 +25,8 @@
         @include make-grid-item(12, 11);
     }
     
-    &__list-item {
+    &__list-item,
+    &__list li {
         @include font-size($font-settings-h2);
         @include font($type-face, $font-weight-bold);
         @include ld-margin-bottom(45px);

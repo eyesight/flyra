@@ -18,6 +18,11 @@
     
     &__icon {
         @include ld-margin-bottom($space-mm);
+
+        svg path {
+            fill: $color-primary !important; 
+            stroke: $color-primary !important;
+        }
     }
     
     &__title {

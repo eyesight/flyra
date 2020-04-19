@@ -1,0 +1,204 @@
+.formular-wrapper {
+    @include full-width();
+}
+
+.frm_forms {
+    color: $color-white;
+    @include make-grid-item(20, 3);
+    @include flexbox();
+
+    form {
+        width: 100%; 
+        overflow: hidden;
+        padding-bottom: 10px;
+    }
+
+    .form-field {
+        margin-left: 0;
+        @include ld-margin-bottom(100px);
+        @include ld-margin-bottom(60px, '.frm_half');
+        @include ld-margin-bottom(50px, '.textbox');
+    }
+
+
+    .frm_half {
+        width: 100% / 20 * 9;
+        @include flexbox(column);
+        &:nth-child(even) {
+            margin-right: 100% / 20 * 2;
+        }
+
+        label {
+            opacity: 0.6;
+        }
+    }
+
+    .is-active {
+        label {
+            opacity: 1;
+        }
+
+        input[type=text],
+        input[type=tel],
+        input[type=number],
+        input[type=email] {
+            border-bottom: 2px solid $color-white;
+        }
+    }
+
+    .frm_checkbox {
+        padding-top: 176px;
+
+        /* Customize the label (the container) */
+        label {
+            width: 100% / 20 * 9;
+            margin-left: 100% / 20 * 11;
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        input[type="checkbox"] {
+            height: 0;
+            width: 0;
+            position: absolute;
+            left: 0;
+        }
+
+        label input[type="checkbox"]::before {
+            width: 20px;
+            height: 20px;
+            background-color: $color-white;
+            display: block;
+            content: ""; 
+            float: left;
+            margin-right: 5px;
+        }
+
+        label input[type="checkbox"]:checked::before {
+            box-shadow: inset 0px 0px 0px 3px $color-white;
+            background-color: $color-blue-sky;
+        }
+    }
+
+    .textbox {
+        label {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            opacity: 0.6;
+        }
+    }
+
+    input[type=text],
+    input[type=tel],
+    input[type=number],
+    input[type=email] {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid white;
+        @include font-size($font-settings-body);
+        color: $color-white;
+        z-index: 100;
+
+        &:focus {
+            outline:0;
+        }
+    }
+
+    select {
+        top: 0;
+        background: transparent;
+        border: none;
+        color: #fff;
+        height: 100px;
+        margin-top: -30px;
+        margin-left: -5px;
+        width: 110% !important;
+        @include font-size($font-settings-body);
+        
+        &:focus {
+            outline:0;
+        }
+        
+        option {
+            padding: 0;
+        }
+    }
+    
+    textarea {
+        background: transparent;
+        border: 1px solid $color-white;
+        min-height: 250px;
+        padding: 20px;
+        @include font-size($font-settings-body);
+        color: $color-white;
+        
+        &::placeholder {
+            color: $color-white;
+            opacity: 0.6;
+        }
+    }
+
+    .select label.frm_primary_label {
+        @include font-size($font-settings-h3);
+        @include font($type-face, $font-weight-bold);
+        color: $color-white;
+
+        &::after {
+            content: '';
+            background-image: url('../svg/arrow-down.min.svg'); 
+            background-size: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 20px;
+            display: inline-block;
+        }
+    }
+
+    .frm_required {
+        display: none;
+    }
+
+    .frm_error {
+        color: red;
+    }
+
+    h2 {
+        @include font-size($font-settings-h3);
+        @include font($type-face, $font-weight-bold);
+        @include ld-margin-bottom(20px);
+    }
+
+    .frm_button_submit {
+        @extend .tile__button;
+        color: $color-white;
+        margin-top: 50px;
+        justify-content: flex-end;
+
+        &::after {
+            content: '';
+            background-image: url(../../dist/svg/Arrow-Link-white.min.svg);
+            background-position: left;
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 10px;
+            display: block;
+            margin-left: 10px;
+            margin-bottom: -2px;
+            transform: translateX(0);
+            transition: transform .3s ease;
+        }
+
+        &:hover::after {
+            transform: translateX(10px);
+            transition: transform 0.3s ease;
+        }
+    }
+}
+

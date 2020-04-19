@@ -5,6 +5,7 @@ import CopyElement from './Classes/CopyElements';
 import ChangeClassOnScroll from './Classes/ChangeClassOnScroll';
 import Sticky from './../../node_modules/sticky-js';
 import isInViewport from './Classes/isInViewport';
+import FormHelp from './Classes/FormHelp';
 
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
@@ -43,6 +44,10 @@ import isInViewport from './Classes/isInViewport';
     new isInViewport({
       element: '.categories',
       className: 'is-in-viewport'
+    });
+
+    new FormHelp({
+      element: '.form-field'
     });
   });
 })();   
