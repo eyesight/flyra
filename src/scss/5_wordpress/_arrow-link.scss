@@ -22,13 +22,17 @@
         height: 10px;
         display: block;
         margin-left: 10px;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
         transform: translateX(0);
         transition: transform 0.3s ease;
         
         .arrow-link:hover & {
             transform: translateX(10px);
             transition: transform 0.3s ease;
+        }
+        
+        .blue & {
+            background-image: url('../../dist/svg/Arrow-Link2.min.svg');
         }
     }
 
@@ -38,5 +42,9 @@
         &__button-text {
             width: calc(100% - 45px);
         }
+    }
+
+    .blue & {
+        color: $color-primary;
     }
 }

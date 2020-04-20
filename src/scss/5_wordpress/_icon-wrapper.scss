@@ -1,0 +1,4 @@
+.icon-wrapper {
+    @include make-grid-item(20, 3);
+    @include ld-margin-bottom(60px);
+}

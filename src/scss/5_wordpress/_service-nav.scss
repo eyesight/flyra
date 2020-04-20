@@ -47,10 +47,18 @@
         .contact {
             a {
                 background: url('../svg/Icon-Kontakt-blue.min.svg') no-repeat left center;
+
+                .blue & {
+                    background: url('../svg/Icon-Kontakt.min.svg') no-repeat left center;
+                }
             }
         }
         a {
             color: $color-primary;
+
+            .blue & {
+                color: $color-white;
+            }
         }
     }
 }

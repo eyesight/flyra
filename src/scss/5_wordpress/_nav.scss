@@ -26,7 +26,8 @@
                 background-color: currentColor;
             }
             
-            .nav--white &{
+            .nav--white &,
+            .blue &{
                 color: $color-white;
             }
         }    
@@ -66,6 +67,10 @@
         background-color: $color-highlight;
         margin-left: -20px;
         min-width: calc(100% + 40px);
+        
+        .blue & {
+            background-color: $color-primary;
+        }
     }
     
     &__item-level-1 {

@@ -1,0 +1,25 @@
+.layout-content-width {
+    @include flexbox(column);
+    @include full-width();
+    @include ld-margin-bottom(145px);
+    
+    &:first-child {
+        margin-top: 150px;
+    }
+    
+    p:not(.title-h2__preline) {
+        @include make-grid-item(20, 3);
+        @include ld-margin-bottom(40px);
+    }
+    
+    &__links {
+        @include make-grid-item(20, 3);
+        @include flexbox();
+    }
+
+    &__link {
+        width: auto;
+        margin-right: 100% / 20 * 1;
+        margin-left: 0;
+    }
+}
