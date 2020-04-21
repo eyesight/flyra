@@ -1,11 +1,10 @@
 // Bundle theme module
 import ToTop from './Classes/ToTop';
-import scrollOutHero from './Classes/scrollOutHero';
-import CopyElement from './Classes/CopyElements';
 import ChangeClassOnScroll from './Classes/ChangeClassOnScroll';
 import Sticky from './../../node_modules/sticky-js';
 import isInViewport from './Classes/isInViewport';
 import FormHelp from './Classes/FormHelp';
+import smoothScroll from './Classes/smoothScroll';
 
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
@@ -51,6 +50,10 @@ import FormHelp from './Classes/FormHelp';
 
     new FormHelp({
       element: '.form-field'
+    });
+
+    new smoothScroll({
+      element: 'nav ul.nav__level-1 li a'
     });
   });
 })();   
