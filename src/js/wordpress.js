@@ -12,31 +12,40 @@ import FormHelp from './Classes/FormHelp';
 	
     new ToTop();
 
-    new CopyElement({
-      element: '.header__logo-container'
-    })
-
     new ChangeClassOnScroll({
       backgroundElement: '.hero',
+      backgroundElement2: '.layout-bg',
+      overElement: '.circle-link',
+    });
+
+   new ChangeClassOnScroll({
+      backgroundElement: '.hero',
+      backgroundElement2: '.layout-bg',
       overElement: '.nav',
     });
 
-    new scrollOutHero({
+    new ChangeClassOnScroll({
       backgroundElement: '.hero',
-      overElement: '.header__logo-container--white',
-      isHeight: true
+      backgroundElement2: '.layout-bg',
+      overElement: '.service-nav',
+    }); 
+
+    new ChangeClassOnScroll({
+      backgroundElement: '.hero',
+      backgroundElement2: '.layout-bg',
+      overElement: '.header__logo-container',
     });
+
+    new ChangeClassOnScroll({
+      backgroundElement: '.hero',
+      backgroundElement2: '.layout-bg',
+      overElement: '.circle-link',
+    }); 
 
     new scrollOutHero({
       backgroundElement: '.hero',
-      overElement: '.circle-link__svg-white',
+      overElement: '.circle-link--white .circle-link__svg',
       isHeight: true
-    });
-
-    new scrollOutHero({
-      backgroundElement: '.hero',
-      overElement: '.service-nav--white',
-      isHeight: false
     });
 
     new Sticky('.scroll-element__link');

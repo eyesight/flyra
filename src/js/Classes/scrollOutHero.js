@@ -47,7 +47,7 @@ class scrollOutHero {
 
   scrollFunction(hero, button, height) {
     let heroHeight = hero.offsetHeight;
-    let heroScrollBottom = (hero.offsetTop + heroHeight) - document.body.scrollTop;
+    let heroScrollBottom = (hero.offsetTop + heroHeight) - document.documentElement.scrollTop;
 
     let buttonViewportOffset = button.getBoundingClientRect();
     var buttonTop = buttonViewportOffset.top;
@@ -55,7 +55,7 @@ class scrollOutHero {
 
     if((heroScrollBottom <= buttonBottom) && (heroScrollBottom >= buttonTop)) {
       let shift = height - (buttonBottom - heroScrollBottom);
-      this.element.style.height = shift;
+      this.element.style.height = shift + 'px';
     } else if(heroScrollBottom >= buttonBottom) {
       this.element.style.height = height;
     } else {
@@ -65,7 +65,7 @@ class scrollOutHero {
 
   scrollFunctionWidth(hero, button, height) {
     let heroHeight = hero.offsetHeight;
-    let heroScrollBottom = (hero.offsetTop + heroHeight) - document.body.scrollTop;
+    let heroScrollBottom = (hero.offsetTop + heroHeight) - document.documentElement.scrollTop;
 
     let buttonViewportOffset = button.getBoundingClientRect();
     var buttonTop = buttonViewportOffset.top;

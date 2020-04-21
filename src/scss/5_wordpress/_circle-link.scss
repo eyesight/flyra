@@ -2,9 +2,10 @@
     position: fixed;
     right: 191px;
     bottom: 201px;
+    z-index: 1000;
 
     &__svg-white,
-    &__svg-dark {
+    &__svg {
         position: absolute;
     }
 }
@@ -13,11 +14,8 @@
     z-index: 10000;
 }
 
-.circle-link--dark {
-    z-index: 1000;
-}
-
 .circle-link__circle {
+    z-index: 1000;
     animation-duration: 10s;
     animation-name: spin-circle ;
     animation-timing-function: linear;
@@ -33,31 +31,29 @@
 
 .circle-link__svg {
     overflow: hidden;
-}
-
-.circle-link__svg-white {
-    z-index: 1;
-}
-
-.circle-link__svg-dark {
     z-index: -1;
 }
 
-.circle-link__svg-dark .Flug_buchen, 
-.circle-link__svg-dark .cls-2 {
+.circle-link--white .circle-link__svg {
+    z-index: 1;
+}
+
+.circle-link__svg .Flug_buchen, 
+.circle-link__svg .cls-2 {
     fill: $color-blue-sky;
 }
 
 .cls-1 {
     stroke: rgba(0,0,0,0);
     font-size: 16px;
-    font-family: Europa-Bold;
+    font-family: 'Europa-Bold';
     font-weight: 700;
     letter-spacing: 0.02em;
 }
 
-.circle-link__svg-white .circle-link__text, 
-.circle-link__svg-white .cls-2 {
+.circle-link--white .circle-link__svg .circle-link__text, 
+.circle-link--white .circle-link__svg .cls-2,
+.circle-link--white .circle-link__svg .Flug_buchen {
     fill: #fff;
 }
 
