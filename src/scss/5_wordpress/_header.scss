@@ -7,6 +7,10 @@
     
     .logo__svg {
         fill: $color-primary;
+
+        .blue & {
+            fill: $color-white;
+        }
     } 
 }   
 

@@ -42,12 +42,6 @@ import FormHelp from './Classes/FormHelp';
       overElement: '.circle-link',
     }); 
 
-    new scrollOutHero({
-      backgroundElement: '.hero',
-      overElement: '.circle-link--white .circle-link__svg',
-      isHeight: true
-    });
-
     new Sticky('.scroll-element__link');
 
     new isInViewport({

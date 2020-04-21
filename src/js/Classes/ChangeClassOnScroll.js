@@ -14,7 +14,7 @@ class ChangeClassOnScroll {
     this.isScrolledDown = true;
     this.buttonHeight = this.element ? this.element.offsetHeight : 0;
 
-    if(this.hero && this.element){
+    if((this.hero || this.layoutbg) && this.element){
       this.bindEvents();
     }
   }
@@ -40,8 +40,8 @@ class ChangeClassOnScroll {
   }
 
   scrollFunction(hero, button, height, bgs) {
-    let heroHeight = hero.offsetHeight;
-    let heroScrollBottom = (hero.offsetTop + heroHeight) - document.documentElement.scrollTop;
+    let heroHeight = hero ? hero.offsetHeight : 0;
+    let heroScrollBottom = hero ? (hero.offsetTop + heroHeight) - document.documentElement.scrollTop : -1;
     let buttonViewportOffset = button.getBoundingClientRect();
     let buttonBottom = buttonViewportOffset.top + (height / 2);
     let isElementNotOverABg = bgs.every((el) => !this.isElementOnBg(el, button, height)); //check if one returns true. When yes, element is true - gets the class for white
