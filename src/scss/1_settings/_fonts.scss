@@ -17,7 +17,9 @@ $font-weight-bold: 700 !default;
 // FONT-SIZE SETTINGS
 $font-settings-body: (null: (1.8rem, 2.6rem)) !default;
 
-$font-settings-h1: (null: (8.2rem, 9rem)) !default;
+$font-settings-h1: (
+    null: (7.2rem, 8rem),
+    xl: (8.2rem, 9rem)) !default;
 
 $font-settings-h2: (null: (6.0rem, 6.5rem)) !default; 
 

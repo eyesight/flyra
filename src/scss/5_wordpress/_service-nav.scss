@@ -28,7 +28,8 @@
                 margin-left: 0;
                 color: $color-primary;
 
-                .blue & {
+                .blue &,
+                .menu-open & {
                     background: url('../svg/Icon-Kontakt.min.svg') no-repeat left center;
                     color: $color-white;
                 }

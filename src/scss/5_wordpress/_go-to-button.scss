@@ -22,4 +22,8 @@
         stroke: #fff;
         stroke-width: 3px;
       }
+
+    .menu-open & {
+        z-index: 0;
+    }
 }

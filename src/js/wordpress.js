@@ -6,6 +6,7 @@ import isInViewport from './Classes/isInViewport';
 import FormHelp from './Classes/FormHelp';
 import smoothScroll from './Classes/smoothScroll';
 import scrollToFirstSection from './Classes/scrollToFirstSection';
+import Menu from './Classes/Menu';
 
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
@@ -42,6 +43,12 @@ import scrollToFirstSection from './Classes/scrollToFirstSection';
       overElement: '.circle-link',
     }); 
 
+    new ChangeClassOnScroll({
+      backgroundElement: '.hero',
+      backgroundElement2: '.layout-bg',
+      overElement: '.hamburger', 
+    }); 
+
     new Sticky('.scroll-element__link');
 
     new isInViewport({
@@ -60,5 +67,7 @@ import scrollToFirstSection from './Classes/scrollToFirstSection';
     new scrollToFirstSection({
       element: '.go-to-button'
     });
+
+    new Menu();
   });
 })();   

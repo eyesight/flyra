@@ -20,11 +20,18 @@
     left: 40px;
     position: fixed;
 
-    &--white {
+    &--white,
+    .menu-open & {
         overflow: hidden;
         z-index: 10000;
         .logo__svg {
             fill: $color-white;
         }
     }
+}
+
+.header__hamburger {
+    position: fixed;
+    right: 40px;
+    top: 30px;
 }

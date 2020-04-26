@@ -1,16 +1,47 @@
 .nav{
-    right: 40px;
-    top: 30px;
+    top: 0;
+    left: 0;
     position: fixed;
     width: 100%;
     z-index: 1000;
+    height: 100vh;
+    background: $color-blue-sky;
+    display: block;
+    overflow-y: auto;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-out;
+    
+    @include xl-min {
+        right: 40px;
+        left: auto;
+        top: 50px;
+        height: auto;
+        display: block;
+        background: transparent;
+        transform: translateY(0);
+    }
 
     &__list {
-        @include flexbox(row, wrap, flex-end, flex-start);
+        @include flexbox(column, wrap, flex-start, center);
+        margin-top: 110px;
+        
+        @include xl-min {
+            @include flexbox(row, wrap, flex-end, flex-start);
+            margin-top: 0;
+        }
     }
 
     &__item-level-0 {
-        margin-left: 30px;
+        margin-left: 0px;
+        margin-bottom: 40px;
+        text-align: center;
+        
+        @include xl-min { 
+            margin-left: 30px;
+            margin-bottom: 0px;
+            text-align: left;
+        }
+
         > a {
             color: $color-primary;
             &:after {
@@ -38,8 +69,8 @@
             cursor: pointer;
             &:before,
             &:after {
-            width: 100%;
-            opacity: 1;
+                width: 100%;
+                opacity: 1;
             }
         }
 
@@ -59,14 +90,31 @@
     }
 
     &__level-1 {
-        position: absolute;
-        top: 30px;
-        height: 0;
+        position: relative;
+        top: 0px;
+        height: auto;
         overflow: hidden;
         width: auto;
-        background-color: $color-highlight;
-        margin-left: -20px;
-        min-width: calc(100% + 40px);
+        background-color: transparent;
+        margin-left: 0px;
+        //margin-bottom: 20px;
+        //margin-top: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        min-width: auto;
+        text-align: center;
+        
+        @include xl-min {
+            top: 30px;
+            margin-left: -20px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            background-color: $color-highlight;
+            position: absolute;
+            height: 0;
+            min-width: calc(100% + 40px);
+            text-align: left;
+        }
         
         .blue & {
             background-color: $color-primary;
@@ -75,13 +123,19 @@
     
     &__item-level-1 {
         margin-top: 15px;
-        opacity: 0;
-        transition: all 0.3s ease-in;
-        transform: translateY(-10px);
+        opacity: 1;
+        transition: none;
+        transform: translateY(0px);
         cursor: pointer;
-
+        
         &:first-child {
             margin-top: 0;
+        }
+        
+        @include xl-min { 
+            transition: all 0.3s ease-in;
+            opacity: 0;
+            transform: translateY(-10px);
         }
 
         > a {
@@ -107,9 +161,14 @@
             cursor: pointer;
             &:before,
             &:after {
-            width: 100%;
-            opacity: 1;
+                width: 100%;
+                opacity: 1;
             }
         }
+    }
+
+    &.navigation--in {
+        transform: translateY(0);
+        transition: transform 0.4s ease-in;
     }
 }

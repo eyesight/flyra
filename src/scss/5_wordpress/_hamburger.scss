@@ -1,0 +1,71 @@
+.hamburger {
+  width: 30px;
+  height: 18px;
+  cursor: pointer;
+  display: block;
+  z-index: 100000;
+
+  @include xl-min {
+      display: none;
+  }
+}
+
+.hamburger__line {
+    width: 30px;
+    height: 2px;
+    background: $color-primary;
+    display: block;
+    position: absolute;
+    transition: .2s all ease;
+  
+    .blue &,
+    .hamburger--white &,
+    .header__hamburger--white &,
+    .menu-open & {
+      background: $color-white;
+    }
+  }
+  
+  .hamburger__line-1{
+    top: 0;
+    left: 0;
+  
+    .animate--out & {
+      animation: line-1-reverse .3s; 
+      animation-fill-mode: forwards;
+    }
+  
+    .animate--in & {
+      animation: line-1 .3s;
+      animation-fill-mode: forwards;
+    }
+  }
+  
+  .hamburger__line-2{
+    top: calc(50% - 1px);
+    left: 0;
+    .animate--out & {
+      animation: line-2-reverse .3s;
+      animation-fill-mode: forwards;
+    }
+  
+    .animate--in & {
+      animation: line-2 .3s;
+      animation-fill-mode: forwards;
+    }
+  }
+  
+  .hamburger__line-3{
+    left: 0;
+    bottom: 0;
+  
+    .animate--out & {
+      animation: line-3-reverse .3s;
+      animation-fill-mode: forwards;
+    }
+  
+    .animate--in & {
+      animation: line-3 .3s;
+      animation-fill-mode: forwards;
+    }
+  }
