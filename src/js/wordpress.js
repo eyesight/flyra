@@ -5,6 +5,7 @@ import Sticky from './../../node_modules/sticky-js';
 import isInViewport from './Classes/isInViewport';
 import FormHelp from './Classes/FormHelp';
 import smoothScroll from './Classes/smoothScroll';
+import scrollToFirstSection from './Classes/scrollToFirstSection';
 
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
@@ -54,6 +55,10 @@ import smoothScroll from './Classes/smoothScroll';
 
     new smoothScroll({
       element: 'nav ul.nav__level-1 li a'
+    });
+
+    new scrollToFirstSection({
+      element: '.go-to-button'
     });
   });
 })();   
