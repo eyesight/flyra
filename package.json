@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "regenerator": "^0.14.1",
+    "smoothscroll-polyfill": "^0.4.4",
     "sticky-js": "^1.2.2",
     "whatwg-fetch": "^3.0.0"
   },

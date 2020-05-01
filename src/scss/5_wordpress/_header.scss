@@ -1,9 +1,18 @@
 .header {
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     width: 100vw;
-    height: 100px;
+    height: 125px;
     top: 0;
+    background-color: $color-white;
+
+    &--overHero {
+        background-color: transparent;
+    }
+    
+    .blue & {
+        background-color: $color-blue-sky;
+    }
     
     .logo__svg {
         fill: $color-primary;
@@ -20,7 +29,7 @@
     left: 40px;
     position: fixed;
     z-index: 1111111;
-
+    .header--overHero &,
     &--white,
     .menu-open & {
         overflow: hidden;

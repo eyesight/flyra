@@ -111,7 +111,14 @@
         }
     }
 
+    input[type=checkbox] {
+        -moz-appearance:initial // Hack for Firefox Browsers
+      }
+
     select {
+        -moz-appearance: none; 
+        -webkit-appearance: none; 
+        appearance: none;
         top: 0;
         background: transparent;
         border: none;

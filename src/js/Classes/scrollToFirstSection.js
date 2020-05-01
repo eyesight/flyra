@@ -5,7 +5,6 @@ class scrollToFirstSection {
     const {
       element
     } = config;
-    //this.elements = Array.prototype.slice.call(document.querySelectorAll(element));
     this.element = document.querySelector(element);
 
     if(this.element) {
