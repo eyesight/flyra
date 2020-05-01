@@ -34,6 +34,7 @@ class Menu {
 
     if (Helper.hasClass(burger, 'animate--in')) {
       Helper.removeClass(document.querySelector('body'), 'menu-open');
+      Helper.removeClass(document.querySelector('body'), 'menu-open--ani');
       Helper.removeClass(menu, 'navigation--in');
       Helper.addClass(menu, 'navigation--out');
       Helper.removeClass(burger, 'animate--in');
@@ -44,6 +45,9 @@ class Menu {
       Helper.removeClass(menu, 'navigation--out');
       Helper.addClass(burger, 'animate--in');
       Helper.removeClass(burger, 'animate--out');
+      setTimeout((e) => {
+        Helper.addClass(document.querySelector('body'), 'menu-open--ani');
+      }, 300);
     }
   }
 

@@ -56,7 +56,7 @@
     }
 
     &__h4 {
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
         @include ld-margin-bottom($space-sm);
     }
 
@@ -69,7 +69,7 @@
     &__center-nav-link,
     &__center-nav .footer__link-level-0,
     &__center-nav .footer__link-level-1 {
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
         .blue &{
             color: $color-white;
 

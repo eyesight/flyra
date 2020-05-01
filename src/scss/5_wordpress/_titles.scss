@@ -1,8 +1,12 @@
 .title-h1 {
-    @include make-grid-item(14);
+    @include make-grid-item(20);
+    
+    @include md-min {
+        @include make-grid-item(14);
+    }
     
     &__text {
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
         @include font-size($font-settings-h1);
         text-align: center;
         color: $color-white;
@@ -24,7 +28,7 @@
     &__title {
         @include make-grid-item(20, 3);
         @include font-size($font-settings-h2);
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
     }
 
     .layout-bg & {

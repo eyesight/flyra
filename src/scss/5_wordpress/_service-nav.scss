@@ -9,6 +9,22 @@
     top: calc(100vh - 50px);
     left: 35px;
     z-index: 1;
+    display: none;
+    opacity: 0;
+
+    @include md-min {
+        display: block;
+        opacity: 1;
+    }
+
+    .menu-open & {
+        display: block;
+    }
+
+    .menu-open--ani & {
+        opacity: 1;
+        transition: opacity 0.3s ease 0.1s;
+    }
 
     &__inner {
         position: absolute;

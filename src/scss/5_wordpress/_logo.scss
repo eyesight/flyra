@@ -3,4 +3,16 @@
     &__svg-dark {
         position: absolute;
     }
+
+    &__text {
+        opacity: 0;
+        @include md-min {
+            opacity: 1;
+        }
+
+        .menu-open--ani & {
+            opacity: 1;
+            transition: opacity 0.3s ease 0.1s;
+        }
+    }
 }   

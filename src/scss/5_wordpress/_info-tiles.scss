@@ -5,15 +5,23 @@
 } 
 
 .info-tile {
-    @include make-grid-item(9, 3);
+    @include make-grid-item(20, 3);
     @include ld-margin-bottom(60px);
+
+    @include md-min {
+        @include make-grid-item(9, 3);
+    }
     
     &:nth-of-type(-n + 2) {
         margin-top: 60px;
     }
     
     &:nth-of-type(even) {
-        @include make-grid-item(9, 2);
+        @include make-grid-item(20, 3);
+        
+        @include md-min {
+            @include make-grid-item(9, 2);
+        }
     }
     
     &__icon {
@@ -23,11 +31,22 @@
             fill: $color-primary !important; 
             stroke: $color-primary !important;
         }
+
+        .weather path,
+        .ga path,
+        .point path {
+            fill: none !important;
+        }
+
+        .point circle,
+        .ga circle {
+            fill: $color-primary;
+        }
     }
     
     &__title {
         @include ld-margin-bottom($space-mm);
         @include font-size($font-settings-h3);
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
     }
 }

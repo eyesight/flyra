@@ -24,8 +24,8 @@
     .frm_half {
         width: 100% / 20 * 9;
         @include flexbox(column);
-        &:nth-child(even) {
-            margin-right: 100% / 20 * 2;
+        + .right {
+            margin-left: 100% / 20 * 2;
         }
 
         label {
@@ -43,6 +43,7 @@
         input[type=number],
         input[type=email] {
             border-bottom: 2px solid $color-white;
+            margin-top: -1px;
         }
     }
 
@@ -146,7 +147,7 @@
 
     .select label.frm_primary_label {
         @include font-size($font-settings-h3);
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
         color: $color-white;
 
         &::after {
@@ -171,7 +172,7 @@
 
     h2 {
         @include font-size($font-settings-h3);
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
         @include ld-margin-bottom(20px);
     }
 

@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
 font-family:"europa";
 src:url("https://use.typekit.net/af/3e64fb/00000000000000003b9b12fe/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),
 url("https://use.typekit.net/af/3e64fb/00000000000000003b9b12fe/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),
@@ -6,29 +6,78 @@ url("https://use.typekit.net/af/3e64fb/00000000000000003b9b12fe/27/a?primer=7cdc
 font-display:auto;
 font-style:normal;
 font-weight:300;
-} */
+} 
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap');
 
 // TYPE-FACE SETTINGS
+//$type-face: 'Raleway', sans-serif !default;
+$type-face: 'Raleway', sans-serif !default;
+$type-face-light: 'Raleway', sans-serif !default;
+$type-face-regular : 'Raleway' sans-serif !default;
+$type-face-bold: 'Raleway', sans-serif !default;
+/* 
 $type-face: 'europa', sans-serif !default;
+$type-face-light: 'europa-light', sans-serif !default;
+$type-face-regular : 'europa-regular' sans-serif !default;
+$type-face-bold: 'europa-bold', sans-serif !default; */
+
 $font-weight: 300 !default;
-$font-weight-semibold: 300 !default;
+$font-weight-semibold: 400 !default;
 $font-weight-bold: 700 !default;
 
 // FONT-SIZE SETTINGS
-$font-settings-body: (null: (1.8rem, 2.6rem)) !default;
+$font-settings-body: (
+    null: (1.6rem, 2.5rem),
+    md: (1.8rem, 2.6rem)
+    ) !default;
 
 $font-settings-h1: (
-    null: (7.2rem, 8rem),
-    xl: (8.2rem, 9rem)) !default;
+    null: (6rem, 7rem),
+    md: (7.2rem, 8rem),
+    xl: (8.2rem, 9rem)
+    ) !default;
 
-$font-settings-h2: (null: (6.0rem, 6.5rem)) !default; 
+$font-settings-h2: (
+    null: (5.0rem, 5.5rem),
+    md: (6.0rem, 6.5rem)
+    ) !default; 
 
-$font-settings-h3: (null: (3rem, 3.5rem)) !default;
+$font-settings-h3: (
+    null: (3rem, 3.5rem),
+    md: (3rem, 3.5rem)
+    ) !default;
 
-$font-settings-go-down-btn: (null: (2.3rem, 1)) !default;
+$font-settings-go-down-btn: (
+    null: (2rem, 1),
+    md: (2.3rem, 1)
+    ) !default;
 
 $font-settings-pretitles: $font-settings-body !default;
 
-$font-settings-tiles: (null: (2.2rem, 2.7rem)) !default;
+$font-settings-tiles: (
+    null: (2rem, 2.5rem),
+    md: (2.2rem, 2.7rem)
+    ) !default;
 
 $font-settings-links: (null: (1.6rem, 2.5rem)) !default;
+
+$font-settings-scroll-element-big: (
+    null: (3.0rem, 3.5rem),
+    md: (6.0rem, 6.5rem)
+    ) !default; 
+
+$font-settings-scroll-element-small: (
+    null: (2.0rem, 2.5rem),
+    md: (3rem, 3.5rem)
+) !default; 
+
+$font-settings-category-title: (
+    null: (4.0rem, 4.5rem),
+    lg: (6.0rem, 6.5rem)
+    ) !default; 
+
+$font-settings-category-item-title: (
+    null: (4rem, 4.5rem),
+    lg: (3rem, 3.5rem)
+    ) !default; 

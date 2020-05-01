@@ -19,6 +19,7 @@
         display: block;
         background: transparent;
         transform: translateY(0);
+        overflow: visible;
     }
 
     &__list {
@@ -58,14 +59,16 @@
             }
             
             .nav--white &,
-            .blue &{
+            .blue &,
+            .menu-open &{
                 color: $color-white;
             }
         }    
 
         &:hover > a,
         &.active > a,
-        &.nav__item--active > a {
+        &.nav__item--active > a,
+        .menu-open & > a {
             cursor: pointer;
             &:before,
             &:after {
@@ -97,8 +100,6 @@
         width: auto;
         background-color: transparent;
         margin-left: 0px;
-        //margin-bottom: 20px;
-        //margin-top: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
         min-width: auto;
@@ -114,6 +115,7 @@
             height: 0;
             min-width: calc(100% + 40px);
             text-align: left;
+            padding: 0;
         }
         
         .blue & {

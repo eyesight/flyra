@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  @include font($type-face, $font-weight);
+  @include font($type-face-light, $font-weight);
   @include font-size($font-settings-body);
   color: $color-main-text;
 }
@@ -16,7 +16,7 @@ body {
 h1,
 h2,
 h3 {
-  @include font($type-face, $font-weight);
+  @include font($type-face-bold, $font-weight-bold);
 }
 
 h1 {

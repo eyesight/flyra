@@ -5,18 +5,26 @@
 } 
 
 .tile-blue {
-    @include make-grid-item(9, 3);
+    @include make-grid-item(20, 3);
     @include ld-margin-bottom(60px);
     background-color: $color-blue-sky;
     color: $color-white;
     padding: 30px 45px 45px;
+    
+    @include md-min {
+        @include make-grid-item(9, 3);
+    }
     
     &:nth-of-type(-n + 2) {
         margin-top: 60px;
     }
     
     &:nth-of-type(even) {
-        @include make-grid-item(9, 2);
+        @include make-grid-item(20, 3);
+
+        @include md-min {
+            @include make-grid-item(9, 2);
+        }
     }
     
     &__icon {
@@ -31,7 +39,7 @@
     h2 {
         @include ld-margin-bottom($space-mm);
         @include font-size($font-settings-h3);
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
     }
 
     &__button,

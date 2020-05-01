@@ -1,6 +1,6 @@
 .arrow-link {
     color: $color-blue-sky;
-    @include make-grid-item(5);
+    @include make-grid-item(20);
     margin-left: auto;
     margin-right: auto;
     height: auto;
@@ -9,6 +9,10 @@
     cursor: pointer;
     padding-left: 0;
     @include flexbox(row, wrap, center, flex-end);
+    
+    @include md-min {
+        @include make-grid-item(5);
+    }
 
     &:hover {
         color: $color-blue-sky;

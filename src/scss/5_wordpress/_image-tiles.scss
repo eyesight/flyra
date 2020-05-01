@@ -12,7 +12,7 @@
     &__title {
         @include ld-margin-bottom($space-mm);
         @include font-size($font-settings-h3);
-        @include font($type-face, $font-weight-bold);
+        @include font($type-face-bold, $font-weight-bold);
     }
     
     &__subtitle {
