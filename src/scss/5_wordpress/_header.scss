@@ -2,9 +2,13 @@
     position: fixed;
     z-index: 1000;
     width: 100vw;
-    height: 125px;
+    height: 70px;  
     top: 0;
     background-color: $color-white;
+    
+    @include xl-min { 
+        height: 125px;
+    }
 
     &--overHero {
         background-color: transparent;
@@ -20,15 +24,24 @@
         .blue & {
             fill: $color-white;
         }
-    } 
+    }
 }   
 
 .header__logo-container{
     z-index: 1000;
-    top: 30px;
-    left: 40px;
+    top: 10px;
+    left: 25px;
     position: fixed;
     z-index: 1111111;
+    
+    @include md-min {
+        left: 40px;
+    }
+    
+    @include xl-min { 
+        top: 30px;
+    }
+
     .header--overHero &,
     &--white,
     .menu-open & {
@@ -42,6 +55,6 @@
 
 .header__hamburger {
     position: fixed;
-    right: 40px;
+    right: 30px;
     top: 30px;
 }

@@ -5,12 +5,12 @@
 }
 
 .tile {
-    @include make-grid-item(20, 3);
+    @include make-grid-item(22, 2);
     @include ld-margin-bottom($space-lm);
     position: relative;
     
     @include md-min {
-        @include make-grid-item(9, 3);
+        @include make-grid-item(20, 3);
     }
 
     &__image-wrapper {
@@ -112,7 +112,7 @@
     }
     
     &:nth-of-type(even) {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
         
         @include md-min {
             @include make-grid-item(9, 2);
@@ -121,7 +121,11 @@
     
     &--large,
     &--without-image {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
+
+        @include md-min {
+            @include make-grid-item(20, 3);
+        }
 
         .tile__image-wrapper {
             @include responsive-ratio-center(100%, 500, 300, 'img');

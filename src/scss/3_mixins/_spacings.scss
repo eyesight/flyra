@@ -8,6 +8,28 @@
   }
 }
 
+@mixin spacing-ld-margin-bottom($spacing-map, $margin: $gutter, $selector: '*') {
+  @if is-map($spacing-map){
+    @each $spacing-breakpoint, $spacing in $spacing-map {
+      @if $spacing-breakpoint == null {
+        & + #{$selector}{
+          margin-top: $margin;
+        }
+      } @else {
+        @include media-breakpoint-up($spacing-breakpoint) {
+          & + #{$selector}{
+            margin-top: $margin;
+          }
+        }
+      }
+    }
+  } @else {
+    & + #{$selector}{
+      margin-top: $margin;
+    }
+  }
+}
+
 /*
   Usage:
   @include spacing(type, spacing-variable);

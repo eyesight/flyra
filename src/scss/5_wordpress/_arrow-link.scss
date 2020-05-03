@@ -4,18 +4,28 @@
     margin-left: auto;
     margin-right: auto;
     height: auto;
-    @include flexbox(row, wrap, flex-start, center);
+    @include flexbox(row, wrap, center, center);
     @include font-size($font-settings-links);
     cursor: pointer;
     padding-left: 0;
-    @include flexbox(row, wrap, center, flex-end);
+    text-align: left;
     
     @include md-min {
-        @include make-grid-item(5);
+        @include make-grid-item(20);
+        margin-left: auto;
     }
-
+    
+    @include sm-min {
+        text-align: center;
+    }
+    
     &:hover {
         color: $color-blue-sky;
+    }
+    
+    &.category-title__link {
+        text-align: left;
+
     }
     
     &__button-arrow {
@@ -26,7 +36,6 @@
         height: 10px;
         display: block;
         margin-left: 10px;
-        margin-bottom: 8px;
         transform: translateX(0);
         transition: transform 0.3s ease;
         

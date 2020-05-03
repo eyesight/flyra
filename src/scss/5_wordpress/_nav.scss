@@ -23,19 +23,21 @@
     }
 
     &__list {
-        @include flexbox(column, wrap, flex-start, center);
+        @include flexbox(column, wrap, flex-start, flex-start);
         margin-top: 110px;
+        margin-left: 80px;
         
         @include xl-min {
             @include flexbox(row, wrap, flex-end, flex-start);
             margin-top: 0;
+            margin-left:n0;
         }
     }
 
     &__item-level-0 {
         margin-left: 0px;
         margin-bottom: 40px;
-        text-align: center;
+        text-align: left;
         
         @include xl-min { 
             margin-left: 30px;
@@ -103,7 +105,8 @@
         padding-top: 20px;
         padding-bottom: 20px;
         min-width: auto;
-        text-align: center;
+        text-align: left;
+        padding: 20px;
         
         @include xl-min {
             top: 30px;

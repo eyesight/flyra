@@ -159,6 +159,7 @@
     
     &__places-item {
         padding-right: 10px;
+        white-space: nowrap;
         
         &:after {
             content: '';

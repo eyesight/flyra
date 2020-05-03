@@ -5,9 +5,14 @@
     &__link{
         width: 100% / $col-count * 9;
         position: absolute;
-        padding-top: 25px;
-        left: 100% / $col-count * 3;
+        padding-top: 20px;
+        left: 100% / $col-count * 2;
         margin-left: 0;
+        
+        @include md-min {
+            padding-top: 25px;
+            left: 100% / $col-count * 3;
+        }
         
         &--sticky {
             margin-left: 0;
@@ -22,10 +27,11 @@
     }
 
     &__list {
-        @include make-grid-item(12, 11);
+        @include make-grid-item(12, 12);
         padding-top: 16px;
-
+        
         @include md-min {
+            @include make-grid-item(12, 11);
             padding-top: 0;
         }
     }
@@ -35,8 +41,8 @@
         @include font-size($font-settings-scroll-element-big);
         @include font($type-face-bold, $font-weight-bold);
         @include ld-margin-bottom(45px);
-        padding-left: 60px; 
-
+        padding-left: 15px; 
+        
         &:before {
             content:'...';
             position: absolute;
@@ -44,8 +50,12 @@
             top: 0;
         }
 
+        @include sm-min {
+            padding-left: 30px; 
+        }
+        
         @include md-min {
-
+            padding-left: 60px; 
         }
     }
 

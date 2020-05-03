@@ -6,11 +6,11 @@
     &__top,
     &__bottom {
         @include flexbox();
-        width: 100%;
     }
-
+    
     &__top {
         @include ld-margin-bottom($space-m);
+        width: 100%;
     }
     
     &__bottom {
@@ -20,15 +20,29 @@
     }
     
     &__left {
-        @include make-grid-item(6, 3);
+        @include make-grid-item(20, 3);
+        @include ld-margin-bottom(20px);
+        
+        @include md-min {
+            @include ld-margin-bottom(0px);
+            @include make-grid-item(5, 3);
+        }
     }
     
     &__center {
-        @include make-grid-item(9, 1);
+        @include make-grid-item(20, 3);
+        @include ld-margin-bottom(20px);
+        @include md-min {
+            @include make-grid-item(8, 1);
+            @include ld-margin-bottom(0px);
+        }
     }
     
     &__right {
-        @include make-grid-item(6, 1);
+        @include make-grid-item(20, 3);
+        @include md-min {
+            @include make-grid-item(5, 1);
+        }
     }
     
     &__info-right {

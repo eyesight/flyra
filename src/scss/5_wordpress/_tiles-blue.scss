@@ -5,7 +5,7 @@
 } 
 
 .tile-blue {
-    @include make-grid-item(20, 3);
+    @include make-grid-item(22, 2);
     @include ld-margin-bottom(60px);
     background-color: $color-blue-sky;
     color: $color-white;
@@ -20,7 +20,7 @@
     }
     
     &:nth-of-type(even) {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
 
         @include md-min {
             @include make-grid-item(9, 2);
