@@ -6,10 +6,11 @@
 
 .tile {
     @include make-grid-item(22, 2);
-    @include ld-margin-bottom($space-lm);
+    @include ld-margin-bottom($space-mm);
     position: relative;
     
     @include md-min {
+        @include ld-margin-bottom($space-lm);
         @include make-grid-item(20, 3);
     }
 
