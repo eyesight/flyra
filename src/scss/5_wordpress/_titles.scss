@@ -16,16 +16,24 @@
 .title-h2 {
     @include full-width();
     @include ld-margin-bottom(60px);
+    @include ld-margin-bottom(0px, '.info-tile-wrapper');
+    @include ld-margin-bottom(0px, '.tile-blue-wrapper');
     @include ld-margin-bottom(20px, '.layout-bg__text');
     @include ld-margin-bottom(0, '.tiles-wrapper');
     
+    @include md-min {
+        @include ld-margin-bottom(0px, '.tile-blue-wrapper');
+        @include ld-margin-bottom(60px, '.info-tile-wrapper');
+    }
+    
     &__preline {
         @include make-grid-item(22, 2);
-        @include ld-margin-bottom(20px);
+        @include ld-margin-bottom(10px);
         @include font-size($font-settings-pretitles);
         
         @include md-min {
             @include make-grid-item(20, 3); 
+            @include ld-margin-bottom(20px);
         }
     }
     

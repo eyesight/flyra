@@ -1,9 +1,15 @@
 .layout-bg {
-    @include ld-margin-bottom(145px);
+    @include ld-margin-bottom($space-m);
     background-color: $color-primary;
-    padding-top: 145px;
-    padding-bottom: 145px;
+    padding-top: $space-m;
+    padding-bottom: $space-m;
     color: $color-white;
+    
+    @include md-min {
+        padding-top: 145px;
+        padding-bottom: 145px;
+        @include ld-margin-bottom(145px);
+    }
     
     a {
         color: $color-white;

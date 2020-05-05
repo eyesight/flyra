@@ -1,23 +1,31 @@
 .tiles-wrapper {
     @include full-width();
     @include flexbox();
-    @include ld-margin-bottom($space-xl);
+    @include ld-margin-bottom($space-mmm);
+    
+    @include md-min {
+        @include ld-margin-bottom($space-xl);
+    }
 }
 
 .tile {
     @include make-grid-item(22, 2);
-    @include ld-margin-bottom($space-mm);
+    @include ld-margin-bottom($space-m);
     position: relative;
     
     @include md-min {
         @include ld-margin-bottom($space-lm);
-        @include make-grid-item(20, 3);
+        @include make-grid-item(9, 3);
     }
 
     &__image-wrapper {
         @include responsive-ratio-center(100%, 412, 312, 'img');
-        @include ld-margin-bottom($space-mm);
+        @include ld-margin-bottom($space-s);
         overflow: hidden;
+        
+        @include md-min {
+            @include ld-margin-bottom($space-mm);
+        }
     }
     
     &__icon-wrapper {
@@ -73,7 +81,11 @@
     }
     
     &__text-wrapper {
-        @include ld-margin-bottom($space-mm);
+        @include ld-margin-bottom($space-s);
+
+        @include md-min {
+            @include ld-margin-bottom($space-mm);
+        }
     }
     
     &__button {
@@ -109,7 +121,11 @@
     }
     
     &:nth-of-type(-n + 2) {
-        margin-top: 60px;
+        margin-top: $space-m;
+        
+        @include md-min {
+            margin-top: $space-mmm;
+        }
     }
     
     &:nth-of-type(even) {

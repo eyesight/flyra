@@ -1,4 +1,10 @@
 .layout-centered {
     @include flexbox();
     @include ld-margin-bottom(145px);
+
+    @include ld-margin-bottom($space-mmm);
+    
+    @include md-min {
+        @include ld-margin-bottom(145px);
+    }
 }
