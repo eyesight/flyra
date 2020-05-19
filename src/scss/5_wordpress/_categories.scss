@@ -8,6 +8,7 @@
     position: relative;
     top: 0;
     overflow: hidden;
+    padding-right: 10px;
     @include ld-margin-bottom($space-m);
     
     > * {
@@ -37,6 +38,20 @@
     
     &__icon {
         @include ld-margin-bottom($space-mm);
+
+        #icon-klassische-fluege,
+        #icon-big-mountain-flights,
+        #icon-streckenfliegen,
+        #icon-flug-date {
+            path,
+            circle {
+                stroke: $color-primary;
+            } 
+        }
+
+        #icon-streckenfliegen #Subtraction_4 {
+            fill: $color-primary;
+        }
     }
     
     &__pretitle {

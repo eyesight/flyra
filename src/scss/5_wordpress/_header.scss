@@ -4,6 +4,7 @@
     width: 100vw;
     height: 70px;  
     top: 0;
+    left: 0;
     background-color: $color-white;
     
     @include xl-min { 
@@ -23,6 +24,16 @@
 
         .blue & {
             fill: $color-white;
+        }
+    }
+
+    &--close-button {
+        width: 70px;
+        right: 0;
+        left: auto;
+
+        @include xl-min { 
+            width: 125px;
         }
     }
 }   

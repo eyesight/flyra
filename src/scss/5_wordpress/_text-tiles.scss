@@ -19,7 +19,12 @@
 
         .weather path,
         .ga path,
-        .point path {
+        .point path,
+        #icon-vor-dem-start path,
+        #icon-manoever path,
+        #icon-flug path,
+        #icon-bilder path,
+        #icon-fluggebiete path {
             fill: none !important;
         }
 
@@ -52,9 +57,14 @@
     }
 
     .blue & &__icon {
-        svg path{
+        svg path {
             stroke: $color-white !important;
             fill: $color-white !important;
+        }
+
+        #icon-bilder circle{
+            stroke: $color-white !important;
+            fill: none !important;
         }
 
         .weather path,
@@ -66,6 +76,13 @@
         .point circle,
         .ga circle {
             fill: $color-blue-sky;
+        }
+
+        #icon-fluggebiete circle,
+        #icon-manoever circle,
+        #icon-flug circle {
+            fill: $color-white !important;
+            stroke: none;
         }
     }
 }

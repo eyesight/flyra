@@ -16,7 +16,7 @@
     }
     
     &__subtitle {
-        @include ld-margin-bottom($space-mm);
+        @include ld-margin-bottom($space-sm);
     }
     
     &__link {

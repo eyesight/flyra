@@ -16,7 +16,12 @@
     .form-field {
         margin-left: 0;
         @include ld-margin-bottom(100px);
+        @include ld-margin-bottom(50px, '.frm_full.vertical_radio');
         @include ld-margin-bottom(60px, '.frm_half');
+        @include ld-margin-bottom(100px, '.textbox');
+    }
+
+    .frm_html_container {
         @include ld-margin-bottom(50px, '.textbox');
     }
 
@@ -45,6 +50,11 @@
             border-bottom: 2px solid $color-white;
             margin-top: -1px;
         }
+    }
+
+    .frm_full.vertical_radio label{
+        width: 100%;
+        margin-left: 0;
     }
 
     .frm_checkbox {
@@ -91,6 +101,18 @@
             left: 20px;
             top: 20px;
             opacity: 0.6;
+        }
+
+        &.frm_full {
+            float: left;
+        }
+    }
+
+    .frm_full.vertical_radio {
+        float: left;
+
+        .frm_checkbox {
+            padding-top: 0;
         }
     }
 
@@ -188,6 +210,7 @@
         color: $color-white;
         margin-top: 50px;
         justify-content: flex-end;
+        float: right;
 
         &::after {
             content: '';

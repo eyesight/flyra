@@ -70,6 +70,10 @@
             }
         }
     }
+
+    &__preline {
+        @include ld-margin-bottom(20px);
+    }
     
     &__title {
         @include font-size($font-settings-h3);
