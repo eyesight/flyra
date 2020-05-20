@@ -15,12 +15,16 @@
     
     &__bottom {
         @include font-size($font-settings-links);
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
         @include flexbox(row, wrap, space-between, flex-start);
+        
+        @include md-min {
+            @include make-grid-item(20, 3);
+        }
     }
     
     &__left {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
         @include ld-margin-bottom(20px);
         
         @include md-min {
@@ -30,7 +34,7 @@
     }
     
     &__center {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
         @include ld-margin-bottom(20px);
         @include md-min {
             @include make-grid-item(8, 1);
@@ -39,7 +43,7 @@
     }
     
     &__right {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
         @include md-min {
             @include make-grid-item(5, 1);
         }
