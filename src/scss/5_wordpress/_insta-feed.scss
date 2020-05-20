@@ -1,14 +1,38 @@
 .insta-feed {
     @include full-width();
     @include flexbox();
-    @include ld-margin-bottom($space-xl);
+    @include ld-margin-bottom($space-m);
+    
+    @include md-min {
+        @include ld-margin-bottom($space-xl);
+    }
 
     &__feed {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
+        
+        @include md-min {
+            @include make-grid-item(20, 3);
+        }
     }
 
     &__icon {
-        margin-bottom: -14px;
+        margin-bottom: -8px;
+        width: 45px;
+        height: 45px;
+        
+        @include md-min {
+            margin-bottom: -14px;
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    &__title.title-h2 {
+        margin-top: 0;
+        
+        @include md-min {
+            margin-top: 150px;
+        }
     }
 
     #sb_instagram #sbi_load .sbi_load_btn, 

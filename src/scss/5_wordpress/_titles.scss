@@ -21,11 +21,15 @@
     @include ld-margin-bottom(20px, '.layout-bg__text');
     @include ld-margin-bottom(0, '.tiles-wrapper');
     @include ld-margin-bottom(0, '.text-tiles-wrapper');
+    @include ld-margin-bottom(0, '.image-tiles-wrapper');
+    @include ld-margin-bottom(50px, '.insta-feed__feed');
     
     @include md-min {
         @include ld-margin-bottom(0px, '.tile-blue-wrapper');
         @include ld-margin-bottom(60px, '.info-tile-wrapper');
         @include ld-margin-bottom(60px, '.text-tiles-wrapper');
+        @include ld-margin-bottom(60px, '.image-tiles-wrapper');
+        @include ld-margin-bottom(60px, '.insta-feed__feed');
     }
     
     &__preline {

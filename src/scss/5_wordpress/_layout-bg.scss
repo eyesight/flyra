@@ -27,11 +27,21 @@
     }
     
     &__img-wrapper {
-        @include make-grid-item(5, 3);
+        @include make-grid-item(10, 2);
+        margin-bottom: $space-sm;
+        
+        @include md-min {
+            @include make-grid-item(5, 3);
+            margin-bottom: 0px;
+        }
     }
     
     &__text-wrapper {
-        @include make-grid-item(14, 1);
+        @include make-grid-item(22, 2);
+        
+        @include md-min {
+            @include make-grid-item(14, 1);
+        }
     }
 
     .blue &{

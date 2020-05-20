@@ -1,18 +1,31 @@
 .image-tiles-wrapper {
     @include full-width();
     @include flexbox();
-    @include ld-margin-bottom($space-xl);
+    @include ld-margin-bottom($space-mmm);
+    
+    @include md-min {
+        @include ld-margin-bottom($space-xl);
+    }
 }
 
 .image-tiles {
-    @include make-grid-item(9, 3);
-    @include ld-margin-bottom($space-l);
+    @include make-grid-item(22, 2);
+    @include ld-margin-bottom($space-m);
     position: relative;
     
+    @include md-min {
+        @include make-grid-item(9, 3);
+        @include ld-margin-bottom($space-l);
+    }
+    
     &__title {
-        @include ld-margin-bottom($space-mm);
+        @include ld-margin-bottom($space-sm);
         @include font-size($font-settings-h3);
         @include font($type-face-bold, $font-weight-bold);
+
+        @include md-min {
+            @include ld-margin-bottom($space-mm);
+        }
     }
     
     &__subtitle {
@@ -27,10 +40,18 @@
     }
 
     &:nth-of-type(-n + 2) {
-        margin-top: 60px;
+        margin-top: $space-m;
+        
+        @include md-min {
+            margin-top: $space-mmm;
+        }
     }
     
     &:nth-of-type(even) {
-        @include make-grid-item(9, 2);
+        @include make-grid-item(22, 2);
+
+        @include md-min {
+            @include make-grid-item(9, 2);
+        }
     }
 }
