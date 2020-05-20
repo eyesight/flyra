@@ -115,8 +115,13 @@ strong{
 }
 
 .content {
-  @include ld-margin-bottom(80px);
-  margin-bottom: 80px;
+  @include ld-margin-bottom($space-m);
+  margin-bottom: $space-m;
+  
+  @include md-min {
+    margin-bottom: 80px;
+    @include ld-margin-bottom(80px);
+  }
 }
 
 .blue {

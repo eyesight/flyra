@@ -1,7 +1,11 @@
 .footer {
     @include full-width();
     @include flexbox(column);
-    margin-bottom: 100px;
+    margin-bottom: $space-m;
+    
+    @include md-min {
+        margin-bottom: $space-l;
+    }
     
     &__top,
     &__bottom {

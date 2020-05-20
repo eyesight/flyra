@@ -20,10 +20,12 @@
     @include ld-margin-bottom(0px, '.tile-blue-wrapper');
     @include ld-margin-bottom(20px, '.layout-bg__text');
     @include ld-margin-bottom(0, '.tiles-wrapper');
+    @include ld-margin-bottom(0, '.text-tiles-wrapper');
     
     @include md-min {
         @include ld-margin-bottom(0px, '.tile-blue-wrapper');
         @include ld-margin-bottom(60px, '.info-tile-wrapper');
+        @include ld-margin-bottom(60px, '.text-tiles-wrapper');
     }
     
     &__preline {

@@ -1,16 +1,28 @@
 .text-tiles-wrapper {
     @include full-width();
     @include flexbox();
-    @include ld-margin-bottom($space-xl);
+    @include ld-margin-bottom($space-m);
+
+    @include md-min {
+        @include ld-margin-bottom($space-xl);
+    }
 }
 
 .text-tiles {
-    @include make-grid-item(9, 3);
-    @include ld-margin-bottom($space-l);
+    @include make-grid-item(22, 2); 
+    @include ld-margin-bottom($space-m);
     position: relative;
+    
+    @include md-min {
+        @include ld-margin-bottom($space-l);
+        @include make-grid-item(9, 3);
+    }
 
     &__icon {
-        @include ld-margin-bottom($space-mm);
+        @include ld-margin-bottom($space-sm);
+        @include md-min {
+            @include ld-margin-bottom($space-mm);
+        }
 
         svg path{
             stroke: $color-blue-dark !important;
@@ -35,17 +47,29 @@
     }
     
     &__title {
-        @include ld-margin-bottom($space-mm);
+        @include ld-margin-bottom($space-sm);
         @include font-size($font-settings-h3);
         @include font($type-face-bold, $font-weight-bold);
+        
+        @include md-min {
+            @include ld-margin-bottom($space-mm);
+        }
     }
 
     &:nth-of-type(-n + 2) {
-        margin-top: 60px;
+        margin-top: $space-m;
+        
+        @include md-min {
+            margin-top: $space-mmm;
+        }
     }
     
     &:nth-of-type(even) {
-        @include make-grid-item(9, 2);
+        @include make-grid-item(22, 2);
+
+        @include md-min {
+            @include make-grid-item(9, 2);
+        }
     }
 
     .blue & &__title {
