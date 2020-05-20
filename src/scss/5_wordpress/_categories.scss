@@ -21,10 +21,10 @@
             transform: translateY(300px);
         }
     }
-    @include make-grid-item-absolute(20, 3);
+    @include make-grid-item-absolute(22, 2);
     
     @include lg-min {
-        @include make-grid-item-absolute(5, 3);
+        @include make-grid-item-absolute(9, 3);
         position: absolute;
         @include ld-margin-bottom(0);
     }

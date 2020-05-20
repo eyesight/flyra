@@ -20,6 +20,10 @@
         transition: opacity 0.3s ease 0.1s;
     }
 
+    .page-template-pageBlueFormWithNavi & {
+        display: none;
+    }
+
     &__svg-white,
     &__svg {
         position: absolute;
