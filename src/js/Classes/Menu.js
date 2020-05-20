@@ -18,7 +18,6 @@ class Menu {
   }
 
   toggleHamburger(burger) {
-		console.log('toggle Hamburger');
 		let toggleContainer = burger.getAttribute('data-toggles-nav');
 		let toggleAria = burger.getAttribute('aria-expanded');
     let menu = document.querySelector(`.${toggleContainer}`);

@@ -21,7 +21,8 @@
     .blue &,
     .hamburger--white &,
     .header__hamburger--white &,
-    .menu-open & {
+    .menu-open &,
+    .header--overHero & {
       background: $color-white;
     }
   }

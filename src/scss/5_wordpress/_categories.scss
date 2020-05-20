@@ -1,7 +1,11 @@
 .categories {
     @include full-width();
     @include flexbox();
-    @include ld-margin-bottom($space-l);
+    @include ld-margin-bottom($space-mmm);
+    
+    @include md-min {
+        @include ld-margin-bottom($space-l);
+    }
 }
 
 .category-title {
@@ -22,9 +26,14 @@
         }
     }
     @include make-grid-item-absolute(22, 2);
+
+    @include md-min {
+        @include make-grid-item-absolute(20, 3);
+        position: absolute;
+    }
     
     @include lg-min {
-        @include make-grid-item-absolute(9, 3);
+        @include make-grid-item-absolute(5, 3);
         position: absolute;
         @include ld-margin-bottom(0);
     }
@@ -114,7 +123,11 @@
 }
 
 .category-items-wrapper {
-    @include make-grid-item(20, 3);
+    @include make-grid-item(22, 2);
+
+    @include md-min {
+        @include make-grid-item(20, 3);
+    }
     
     @include lg-min {
         @include make-grid-item(13, 10);
@@ -122,7 +135,11 @@
 }
 
 .category-item {
-    @include ld-margin-bottom($space-l);
+    @include ld-margin-bottom($space-m);
+    
+    @include md-min {
+        @include ld-margin-bottom($space-l);
+    }
 
     &__image-wrapper {
         @include ld-margin-bottom($space-mm);
@@ -143,7 +160,11 @@
     
     &__sevice-list {
         @include flexbox();
-        @include ld-margin-bottom($space-sm);
+        @include ld-margin-bottom($space-s);
+        
+        @include md-min {
+            @include ld-margin-bottom($space-sm);
+        }
     }
     
     &__service-list-item {  
@@ -199,7 +220,11 @@
     }
 
     &__text {
-        @include ld-margin-bottom(40px);
+        @include ld-margin-bottom(20px);
+        
+        @include md-min {
+            @include ld-margin-bottom(40px);
+        }
     }
     
     &__big-text {

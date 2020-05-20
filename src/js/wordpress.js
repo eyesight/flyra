@@ -24,40 +24,16 @@ smoothscroll.polyfill();
       overElement: '.circle-link',
     });
 
-    /* new ChangeClassOnScroll({
-      backgroundElement: '.hero',
-      backgroundElement2: '.layout-bg',
-      overElement: '.nav',
-    }); */
-
     new ChangeClassOnScroll({
       backgroundElement: '.hero',
       backgroundElement2: '.layout-bg',
       overElement: '.service-nav',
     }); 
 
-    /* new ChangeClassOnScroll({
-      backgroundElement: '.hero',
-      backgroundElement2: '.layout-bg',
-      overElement: '.header'
-    }); */ 
-
-    /* new ChangeClassOnScroll({
-      backgroundElement: '.hero',
-      backgroundElement2: '.layout-bg',
-      overElement: '.header__logo-container'
-    }); */
-
     new ChangeClassOnScroll({
       backgroundElement: '.hero',
       backgroundElement2: '.layout-bg',
       overElement: '.circle-link'
-    }); 
-
-    new ChangeClassOnScroll({
-      backgroundElement: '.hero',
-      backgroundElement2: '.layout-bg',
-      overElement: '.hamburger'
     }); 
 
     new scrollOutHero({
