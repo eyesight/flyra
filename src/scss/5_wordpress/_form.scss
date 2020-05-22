@@ -192,10 +192,6 @@
         option {
             padding: 0;
         }
-        
-        @include md-min {
-            margin-left: -5px;
-        }
     }
     
     textarea {

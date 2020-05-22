@@ -5,15 +5,20 @@
     transform: rotate(-90deg);
     transform-origin: top left;
     height: 26px;
-    top: calc(100vh - 50px);
-    left: 35px;
+    top: auto;
+    bottom: 5px;
+    left: 20px;
     z-index: 1000;
     display: none;
     opacity: 0;
+    @include font-size($font-settings-nav);
 
     @include md-min {
         display: block;
         opacity: 1;
+        top: calc(100vh - 50px);
+        left: 35px;
+        bottom: auto;
     }
 
     .menu-open & {

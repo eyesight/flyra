@@ -1,7 +1,7 @@
 .circle-link {
     position: fixed;
-    right: 191px;
-    bottom: 201px;
+    right: 150px;
+    bottom: 150px;
     z-index: 1000;
     display: none;
     opacity: 0;
@@ -9,6 +9,8 @@
     @include md-min {
         display: block;
         opacity: 1;
+        right: 191px;
+        bottom: 201px;
     }
     
     .menu-open & {
@@ -35,17 +37,25 @@
 }
 
 .circle-link__circle {
+    width: 130px;
+    height: 130px;
+    top: 0px;
+    left: 0px;
+    transition: all 0.3s ease;
     z-index: 1000;
     animation-duration: 10s;
     animation-name: spin-circle ;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+
+    @include lg-min {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 .circle-link__text {
     position: absolute;
-    top: 0;
-    left: 0;
     font-weight: bold;
 }
 
@@ -80,17 +90,7 @@
     fill: #fff;
 }
 
-.circle-link__circle {
-    width: 150px;
-    height: 150px;
-    top: 0px;
-    left: 0px;
-    transition: all 0.3s ease;
-}
-
 .circle-link__a {
-    top: 0px;
-    left: 0px;
     transition: all 0.3s ease;
 }
 
@@ -116,9 +116,14 @@
 } 
 
 .circle-link__a .circle-link__text {
-    top: 0px;
-    left: 0px;
+    top: -10px;
+    left: -10px;
     transition: all 0.3s ease;
+
+    @include lg-min {
+        top: 0px;
+        left: 0px;
+    }
 }
 
 .circle-link__a:hover .circle-link__text {

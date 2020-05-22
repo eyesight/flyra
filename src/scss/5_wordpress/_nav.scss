@@ -10,6 +10,7 @@
     overflow-y: auto;
     transform: translateY(-100%);
     transition: transform 0.4s ease-out;
+    @include font-size($font-settings-nav);
     
     @include xl-min {
         right: 40px;
@@ -24,26 +25,44 @@
 
     &__list {
         @include flexbox(column, wrap, flex-start, flex-start);
-        margin-top: 110px;
-        margin-left: 80px;
+        margin-top: 90px;
+        margin-left: 55px;
+
+        @include md-min {
+            margin-top: 100px;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            @include flexbox(column, wrap, center, center);
+        }
         
         @include xl-min {
+            transform: translateX(0%);
             @include flexbox(row, wrap, flex-end, flex-start);
             margin-top: 0;
-            margin-left:n0;
+            margin-left: 0;
         }
     }
 
     &__item-level-0 {
         margin-left: 0px;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         text-align: left;
-        padding-bottom: 20px;
+        padding-bottom: 5px;
+
+        @include md-min {
+            text-align: center;
+        }
         
         @include xl-min { 
             margin-left: 30px;
             margin-bottom: 0px;
+            padding-bottom: 20px;
             text-align: left;
+        }
+        
+        &.nav__item--has-children {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         > a {
@@ -51,7 +70,7 @@
             &:after {
                 content: "";
                 position: absolute;
-                bottom: -10px;
+                bottom: -5px;
                 left: 0; 
                 width: 0px;
                 height: 2px;
@@ -59,6 +78,10 @@
                 transition: all 0.5s ease-in-out;
                 opacity: 0;
                 background-color: currentColor;
+                
+                @include lg-min {
+                    bottom: -10px;
+                }
             }
             .header--overHero &,
             .nav--white &,
@@ -86,7 +109,11 @@
             .nav__level-1 { 
                 height: auto;
                 overflow: visible;
-                padding: 20px;
+                padding: 15px 20px;
+
+                @include xl-min {
+                    padding: 20px;
+                }
             }
             .nav__item-level-1 {
                 opacity: 1;
@@ -103,14 +130,18 @@
         width: auto;
         background-color: transparent;
         margin-left: 0px;
-        padding-top: 20px;
-        padding-bottom: 20px;
         min-width: auto;
         text-align: left;
-        padding: 20px;
+        padding: 15px 20px;
+        
+        @include md-min {
+            text-align: center;
+        }
         
         @include xl-min {
             top: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
             margin-left: -20px;
             margin-bottom: 0px;
             margin-top: 0px;
@@ -128,7 +159,7 @@
     }
     
     &__item-level-1 {
-        margin-top: 15px;
+        margin-top: 10px;
         opacity: 1;
         transition: none;
         transform: translateY(0px);
@@ -139,6 +170,7 @@
         }
         
         @include xl-min { 
+            margin-top: 15px;
             transition: all 0.3s ease-in;
             opacity: 0;
             transform: translateY(-10px);

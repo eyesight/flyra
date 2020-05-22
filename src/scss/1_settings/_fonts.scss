@@ -32,6 +32,12 @@ $font-settings-body: (
     md: (1.8rem, 2.6rem)
     ) !default;
 
+$font-settings-nav: (
+    null: (1.4rem, 2.1rem),
+    md: (1.6rem, 2.4rem),
+    xl: (1.8rem, 2.6rem)
+    ) !default;
+
 $font-settings-h1: (
     null: (5rem, 6rem),
     sm: (6rem, 7rem),

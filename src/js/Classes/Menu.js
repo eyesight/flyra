@@ -16,7 +16,7 @@ class Menu {
     this.hamburger.addEventListener('click', e => {
       this.toggleHamburger(this.hamburger);
     });
-    if(this.navigationElements.length !== 0 && window.matchMedia('(min-width: 1250px)').matches) {
+    if(this.navigationElements.length !== 0 && window.matchMedia('(max-width: 1250px)').matches) {
       this.navigationElements.forEach(element => {
         element.addEventListener('click', e => {
           console.log(element);

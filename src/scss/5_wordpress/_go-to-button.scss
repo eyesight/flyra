@@ -4,10 +4,14 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    bottom: 45px;
+    bottom: 55px;
     color: $color-white;
     @include flexbox(column, wrap, center, center);
     cursor: pointer;
+    
+    @include md-min {
+        bottom: 45px;
+    }
 
     &__text {
         @include ld-margin-bottom(15px);

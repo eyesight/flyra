@@ -1,18 +1,16 @@
 .logo {
-    &__svg-white,
-    &__svg-dark {
-        position: absolute;
+    &__svg {
+        max-width: 90%;
+
+        @include md-min {
+            max-width: auto;
+        }
     }
 
-    &__text {
+    &__paragliding {
         opacity: 0;
         @include md-min {
             opacity: 1;
-        }
-
-        .menu-open--ani & {
-            opacity: 1;
-            transition: opacity 0.3s ease 0.1s;
         }
     }
 }   
