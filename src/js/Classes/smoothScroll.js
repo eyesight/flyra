@@ -3,11 +3,12 @@ import Helper from "./Helper";
 class smoothScroll {
   constructor(config = {}) {
     const {
-      element
+      element,
+      element2
     } = config;
     this.elements = Array.prototype.slice.call(document.querySelectorAll(element));
     //this.url = this.getUrl(window.location);
-    this.anchorlinks = document.querySelectorAll('.nav__link-level-1')
+    this.anchorlinks = document.querySelectorAll(element2)
     this.bindEvents();
   }
   
@@ -21,6 +22,7 @@ class smoothScroll {
     });
 
     this.anchorlinks.forEach((el)=>{
+      console.log(el);
       let urlArr = el.href.split('#');
       let ele = document.getElementById(urlArr[1]);
       el.addEventListener('click', (e) => {

@@ -53,7 +53,13 @@ smoothscroll.polyfill();
     });
 
     new smoothScroll({
-      element: 'nav ul.nav__level-1 li a'
+      element: 'nav ul.nav__level-1 li a',
+      element2: '.nav__link-level-1'
+    });
+
+    new smoothScroll({
+      element: '.footer__left-ul li a',
+      element2: '.footer__link-level-0'
     });
 
     new scrollToFirstSection({
