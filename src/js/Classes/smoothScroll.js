@@ -6,7 +6,7 @@ class smoothScroll {
       element
     } = config;
     this.elements = Array.prototype.slice.call(document.querySelectorAll(element));
-    this.url = this.getUrl(window.location);
+    //this.url = this.getUrl(window.location);
     this.anchorlinks = document.querySelectorAll('.nav__link-level-1')
     this.bindEvents();
   }
@@ -37,6 +37,7 @@ class smoothScroll {
     });
 
     if(window.location.hash) {
+      console.log(window.location.hash);
       let element = document.querySelector(window.location.hash);
         // takes care of some browsers issue
         setTimeout(()=>{
@@ -47,6 +48,7 @@ class smoothScroll {
   }
 
   scrollTo(element) {    
+    console.log(element);
     window.scroll({
       behavior: 'smooth',
       left: 0,
@@ -71,8 +73,8 @@ class smoothScroll {
         let section = Helper.getClosest(sectionInner, 'section');
         if ( section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
           link.parentNode.classList.add("current");
-          let theId = sectionInner.id;
-          window.location.hash = theId; 
+          //let theId = sectionInner.id;
+          //window.location.hash = theId; 
         } else {
           link.parentNode.classList.remove("current");
         }

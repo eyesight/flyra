@@ -4,6 +4,7 @@ class Menu {
   constructor() {
     // console.log('constructor');
     this.hamburger = document.querySelector('.header__hamburger');
+    this.navigationElements = Array.prototype.slice.call(document.querySelectorAll('.nav__level-1 a'));
     this.bindEvents();
 
 		this.removeClassResponsively('navigation--in', window.matchMedia('(min-width: 1250px)'), window);
@@ -15,6 +16,14 @@ class Menu {
     this.hamburger.addEventListener('click', e => {
       this.toggleHamburger(this.hamburger);
     });
+    if(this.navigationElements.length !== 0 && window.matchMedia('(min-width: 1250px)').matches) {
+      this.navigationElements.forEach(element => {
+        element.addEventListener('click', e => {
+          console.log(element);
+          this.toggleHamburger(this.hamburger);
+        });
+      });
+    }
   }
 
   toggleHamburger(burger) {

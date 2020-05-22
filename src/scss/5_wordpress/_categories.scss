@@ -29,7 +29,7 @@
 
     @include md-min {
         @include make-grid-item-absolute(20, 3);
-        position: absolute;
+        position: relative;
     }
     
     @include lg-min {
@@ -86,7 +86,11 @@
         > * {
             transform: translateY(0px);
             opacity: 1;
-            transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+            transition: none;
+            
+            @include lg-min {
+                transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+            }
         }
         
         @include lg-min {
@@ -101,9 +105,10 @@
         > * {
             transform: translateY(-300px);
             opacity: 1;
-            transition: opacity 0.3s ease-in, transform 0.3s ease-in;
-
+            transition: none;
+            
             @include lg-min { 
+                transition: opacity 0.3s ease-in, transform 0.3s ease-in;
                 opacity: 0;
             }
         }
