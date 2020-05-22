@@ -1,12 +1,18 @@
 .circle-link {
     position: fixed;
-    right: 150px;
-    bottom: 150px;
+    right: 170px;
+    bottom: 165px;
     z-index: 1000;
     display: none;
     opacity: 0;
 
     @include md-min {
+        opacity: 0;
+        right: 191px;
+        bottom: 201px;
+    }
+
+    @include lg-min {
         display: block;
         opacity: 1;
         right: 191px;
@@ -39,16 +45,16 @@
 .circle-link__circle {
     width: 130px;
     height: 130px;
-    top: 0px;
-    left: 0px;
+    top: 10px;
+    left: 10px;
     transition: all 0.3s ease;
     z-index: 1000;
-    animation-duration: 10s;
+    animation-duration: 15s;
     animation-name: spin-circle ;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
-    @include lg-min {
+    @include md-min {
         width: 150px;
         height: 150px;
     }
@@ -60,8 +66,15 @@
 }
 
 .circle-link__svg {
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     z-index: -1;
+
+    @include md-min {
+        width: 170px;
+        height: 170px;
+    }
 }
 
 .circle-link--white .circle-link__svg {
@@ -95,41 +108,50 @@
 }
 
 .circle-link__a:hover {
-    top: -10px;
-    left: -10px;
-    transition: all 0.3s ease;
-}
-
-.circle-link__a:hover .circle-link__circle,
-.circle-link__a:hover .circle-link__svg {
-    width: 170px;
-    height: 170px;
     top: 0px;
     left: 0px;
     transition: all 0.3s ease;
+
+    @include md-min {
+        top: 0;
+        left: 0;
+    } 
 }
 
 .circle-link__a:hover .circle-link__circle {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
+    top: 0px;
+    left: 0px;
     transition: all 0.3s ease;
+
+    @include md-min {
+        width: 170px;
+        height: 170px;
+    }
 } 
 
 .circle-link__a .circle-link__text {
-    top: -10px;
-    left: -10px;
+    top: 0px;
+    left: 0px;
     transition: all 0.3s ease;
-
-    @include lg-min {
-        top: 0px;
-        left: 0px;
+    
+    @include md-min {
+        top: 10px;
+        left: 10px;
+        transition: all 0.3s ease;
     }
 }
 
 .circle-link__a:hover .circle-link__text {
-    top: 10px;
-    left: 10px;
+    top: 0px;
+    left: 0px;
     transition: all 0.3s ease;
+
+    @include md-min { 
+        top: 10px;
+        left: 10px;
+    }
 }
 
 

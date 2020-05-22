@@ -22,7 +22,6 @@ class smoothScroll {
     });
 
     this.anchorlinks.forEach((el)=>{
-      console.log(el);
       let urlArr = el.href.split('#');
       let ele = document.getElementById(urlArr[1]);
       el.addEventListener('click', (e) => {
@@ -39,7 +38,6 @@ class smoothScroll {
     });
 
     if(window.location.hash) {
-      console.log(window.location.hash);
       let element = document.querySelector(window.location.hash);
         // takes care of some browsers issue
         setTimeout(()=>{
@@ -50,7 +48,6 @@ class smoothScroll {
   }
 
   scrollTo(element) {    
-    console.log(element);
     window.scroll({
       behavior: 'smooth',
       left: 0,
