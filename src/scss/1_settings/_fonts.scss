@@ -11,10 +11,9 @@ font-weight:300;
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;700&display=swap');
 
 // TYPE-FACE SETTINGS
-//$type-face: 'Raleway', sans-serif !default;
 $type-face: 'Raleway', sans-serif !default;
 $type-face-light: 'Raleway', sans-serif !default;
-$type-face-regular : 'Raleway' sans-serif !default;
+$type-face-regular: 'Raleway', sans-serif !default;
 $type-face-bold: 'Raleway', sans-serif !default;
 /* 
 $type-face: 'europa', sans-serif !default;
@@ -93,3 +92,9 @@ $font-settings-category-item-title: (
     sm: (4rem, 4.5rem),
     lg: (3rem, 3.5rem)
     ) !default; 
+
+$font-settings-h2-content: (
+    null: (2.5rem, 3rem),
+    sm: (3rem, 3.5rem),
+    md: (3rem, 3.5rem)
+) !default; 

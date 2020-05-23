@@ -15,7 +15,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   @include font($type-face-bold, $font-weight-bold);
 }
 
@@ -24,11 +25,14 @@ h1 {
 }
 
 h2 {
-  @include font-size($font-settings-h2);
+  @include font-size($font-settings-h2-content);
 }
 
-h3 {
-  @include font-size($font-settings-h3);
+h3,
+h4,
+h5,
+h6 {
+  @include font-size($font-settings-body);
 }
 
 img {
@@ -121,6 +125,57 @@ strong{
   @include md-min {
     margin-bottom: 80px;
     @include ld-margin-bottom(80px);
+  }
+  
+  .page-template-default & {
+    @include flexbox(column);
+    @include full-width();
+    margin-top: 150px;    
+    
+    .title-h1__text {
+      color: $color-primary;
+      text-align: left;
+    }
+    
+    > * {
+      @include make-grid-item(22, 2);
+      @include ld-margin-bottom(20px);
+      @include ld-margin-bottom(40px, 'h2');
+      @include ld-margin-bottom(40px, 'h3');
+      @include md-min {
+        @include make-grid-item(20, 3);
+      }
+    }
+    
+    h2,
+    h3 {
+      @include ld-margin-bottom(20px, 'h3');
+      @include ld-margin-bottom(20px, 'h4');
+      @include ld-margin-bottom(20px, 'h5');
+      @include ld-margin-bottom(20px, 'h6');
+    }
+    
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include ld-margin-bottom(0px, 'h4');
+      @include ld-margin-bottom(0px, 'h5');
+      @include ld-margin-bottom(0px, 'h6');
+    }
+    
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include ld-margin-bottom(0px, 'p');
+    }
+
+    h5,
+    h6 {
+      @include font($type-face-light, $font-weight);
+      color: $color-blue-medium;
+    }
   }
 }
 
