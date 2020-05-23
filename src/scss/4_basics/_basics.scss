@@ -176,10 +176,32 @@ strong{
       @include font($type-face-light, $font-weight);
       color: $color-blue-medium;
     }
+
+    a {
+      color: $color-blue-sky;
+    
+      &:hover,
+      &:focus{
+        color: $color-main-text;
+        text-decoration: none;
+      }
+    }
   }
 }
 
 .blue {
   background-color: $color-blue-sky;
   color: $color-white;
+}
+
+.transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-blue-sky;
+  z-index: -1;
+  transform: translateX(-100%);
+  display: none;
 }

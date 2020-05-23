@@ -4,6 +4,7 @@
   cursor: pointer;
   display: block;
   z-index: 100000;
+  position: absolute;
 
   @include xl-min {
       display: none;

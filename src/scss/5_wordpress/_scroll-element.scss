@@ -3,15 +3,23 @@
     @include flexbox();
     
     &__link{
-        width: 100% / $col-count * 9;
-        position: absolute;
-        padding-top: 20px;
+        width: 100%;
+        position: relative;
+        padding-top: 9px;
         left: 100% / $col-count * 2;
         margin-left: 0;
+        margin-bottom: $space-mm;
         
         @include md-min {
-            padding-top: 25px;
+            padding-top: 9px;
+            position: absolute;
             left: 100% / $col-count * 3;
+            width: 100% / $col-count * 9;
+            margin-bottom: 0;
+        }
+        
+        @include xl-min {
+            padding-top: 25px;
         }
         
         &--sticky {
@@ -27,7 +35,7 @@
     }
 
     &__list {
-        @include make-grid-item(12, 12);
+        @include make-grid-item(22, 2);
         padding-top: 16px;
         
         @include md-min {
@@ -40,7 +48,7 @@
     &__list li {
         @include font-size($font-settings-scroll-element-big);
         @include font($type-face-bold, $font-weight-bold);
-        @include ld-margin-bottom(45px);
+        @include ld-margin-bottom($space-sm);
         padding-left: 15px; 
         
         &:before {
@@ -49,12 +57,13 @@
             left: 0;
             top: 0;
         }
-
+        
         @include sm-min {
             padding-left: 30px; 
         }
         
         @include md-min {
+            @include ld-margin-bottom(45px);
             padding-left: 60px; 
         }
     }
