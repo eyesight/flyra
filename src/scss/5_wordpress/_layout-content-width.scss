@@ -8,13 +8,21 @@
     }
     
     p:not(.title-h2__preline) {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
         @include ld-margin-bottom(40px);
+        
+        @include md-min {
+            @include make-grid-item(20, 3);
+        }
     }
     
     &__links {
-        @include make-grid-item(20, 3);
+        @include make-grid-item(22, 2);
         @include flexbox();
+
+        @include md-min {
+            @include make-grid-item(20, 3);
+        }
     }
 
     &__link {

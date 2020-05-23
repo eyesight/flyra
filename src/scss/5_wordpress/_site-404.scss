@@ -1,0 +1,30 @@
+.site-404 {
+    @include flexbox(column, wrap, center, center);
+    @include full-width();
+    margin-bottom: 150px;
+    margin-top: 200px;
+    
+    p:not(.title-h2__preline),
+    .title-h1,
+    &__icon {
+        @include make-grid-item(20, 3);
+        @include ld-margin-bottom(80px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &__icon { 
+        @include ld-margin-bottom(60px);
+    }
+
+    .title-h1__text {
+        color: $color-primary;
+    }
+
+    &__svg {
+        min-width: 100px;
+        min-height: 100px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
