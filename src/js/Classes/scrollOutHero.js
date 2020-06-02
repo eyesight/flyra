@@ -34,7 +34,7 @@ class scrollOutHero {
     let heroScrollBottom = (hero.offsetTop + heroHeight) - document.documentElement.scrollTop;
 
     let buttonViewportOffset = button.getBoundingClientRect();
-    var buttonBottom = buttonViewportOffset.top + (height/2);
+    let buttonBottom = buttonViewportOffset.top + (height/2);
     if(heroScrollBottom >= buttonBottom) {
         Helper.addClass(button, button.classList[0] + '--overHero');
       }else {

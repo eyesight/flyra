@@ -198,10 +198,22 @@ strong{
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100vw; 
   height: 100vh;
-  background-color: $color-blue-sky;
-  z-index: -1;
+  //background-color: $color-blue-sky;
   transform: translateX(-100%);
-  display: none;
+  display: block;
 }
+
+.test {
+  position: absolute;
+  z-index: -1 !important;
+}
+
+/*[data-barba='wrapper'] {
+  position: relative;
+}
+ 
+[data-barba='container'] {
+  
+} */

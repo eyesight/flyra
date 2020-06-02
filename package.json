@@ -2,6 +2,8 @@
   "name": "flyra-theme",
   "version": "0.0.1",
   "dependencies": {
+    "@barba/core": "^2.9.7",
+    "animejs": "^3.2.0",
     "regenerator": "^0.14.1",
     "smoothscroll-polyfill": "^0.4.4",
     "sticky-js": "^1.2.2",
