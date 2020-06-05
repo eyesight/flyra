@@ -5,7 +5,9 @@ class Menu {
     // console.log('constructor');
     this.hamburger = document.querySelector('.header__hamburger');
     this.navigationElements = Array.prototype.slice.call(document.querySelectorAll('.nav__level-1 a'));
-    this.bindEvents();
+    if(this.hamburger) {
+      this.bindEvents();
+    }
 
 		this.removeClassResponsively('navigation--in', window.matchMedia('(min-width: 1250px)'), window);
 		this.removeClassResponsively('animate--in', window.matchMedia('(min-width: 1250px)'), window);

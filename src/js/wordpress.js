@@ -19,7 +19,7 @@ smoothscroll.polyfill();
 const initAll = {
   init: () => {
   
-    new ToTop();
+    //new ToTop();
 
     new ChangeClassOnScroll({
       backgroundElement: '.hero',
@@ -62,7 +62,7 @@ const initAll = {
 
     new smoothScroll({
       element: '.footer__left-ul li a',
-      element2: '.footer__link-level-0'
+      element2: '.footer__left-nav .footer__link-level-0'
     });
 
     new scrollToFirstSection({
@@ -81,52 +81,51 @@ const initAll = {
 })();   
 
 barba.init({
-  sync: true,
   transitions: [{
+    sync: false,
     name: 'default-transition',  
+    from: {
+      // define a custom rule based on the trigger class
+      custom: ({ trigger }) => {
+        return (trigger.classList && (trigger.classList.contains('circle-link__a') || trigger.classList.contains('category-title__link'))) || (trigger.parentNode.classList && trigger.parentNode.classList.contains('transition-blue'));
+      }
+    },
     leave({current}) {
       let tl = anime.timeline({
         easing: 'easeOutExpo',
-        duration: 300
+        duration: 400
       })
       .add({
-        targets: '.title-h1', 
-        translateY: '50px',
-        opacity: 0
-      })
+        targets: '.transition', 
+        translateX: ['100%', 0],
+        translateY: [0, 0]
+      }) 
       .add({
-        targets: barba.wrapper,
-        translateX: '-100%',
-      })
-      .add({
-        targets: barba.wrapper + ' .container',
-        opacity: [1, 0],
         complete: function() {
-          barba.wrapper.querySelector('.container').classList.add('test');
+          barba.wrapper.querySelector('.container').classList.add('end-transition-out');
         }
       })
-      /* .add({
-        targets: '.transition',
-        translateX: 0,
-      })
-      .add({
-        targets: current.container + ' .hero',
-        opacity: 0
-      }); */
       return tl.finished;
     },
     /* beforeEnter({ next }) {
       next.container.style.zIndex = -1
     }, */
     enter({next}) {
+      console.log(next);
        let tl = anime.timeline({
         easing: 'easeOutExpo',
-        duration: 300,
-        delay: 500
+        duration: 400
+      })
+      .add({
+        targets: '.transition', 
+        translateX: [0, '100%'],
+        translateY: [0, 0],
+        duration: 10
       })
       .add({
         targets: barba.wrapper,
-        translateX: ['100%', 0],
+        translateY: ['20px', 0],
+        opacity: [0, 1]
       })
       .add({
         targets: barba.wrapper + ' .container',
@@ -136,56 +135,78 @@ barba.init({
         }
       })
       .add({
-        targets: ['.title-h1'], 
-        translateY: ['50px', '0px'],
-        opacity: [0, 1]
-      })
-      .add({
-        targets: ['.go-to-button'], 
-        translateY: ['50px', '0px'], 
-        translateX: ['-50%', '-50%'], 
-        opacity: [0, 1]
-      })
-      .add({
         targets: barba.wrapper,
         complete: function() {
           barba.wrapper.style.transform = 'none';
         }
       })
-      /* .add({
-        targets: '.content > *',
-        translateY: '0',
-        opacity: 1
-      })
-      .add({
-        targets: '.transition',
-        translateX: '-100%',
-      })
-      .add({
-        targets: '.hero',
-        opacity: [0, 1],
-      })
-      .add({
-        targets: '.title-h1',
-        opacity: [0, 1],
-        translateY: ['20', '0'],
-      })
-      .add({
-        targets: '.go-to-button',
-        opacity: [0, 1],
-        translateY: ['20', '0'],
-        translateX: ['-50%', '-50%']
-      }); */
       return tl.finished;
     }
+  },
+  {
+    sync: false,
+      name: 'blue-transition',  
+      from: {
+        // define a custom rule based on the trigger class
+        custom: ({ trigger }) => {
+          return (trigger.classList && trigger.classList.contains('close-button__link')) || trigger === 'back';
+        }
+      },
+      leave({current}) {
+        let tl = anime.timeline({
+          easing: 'easeOutExpo',
+          duration: 400
+        })
+        .add({
+          targets: barba.wrapper,
+          translateY: [0, '20px'],
+          opacity: [1, 0]
+        })
+        .add({
+          complete: function() {
+            barba.wrapper.querySelector('.container').classList.add('end-transition-out');
+          }
+        })
+        return tl.finished;
+      },
+      /* beforeEnter({ next }) {
+        next.container.style.zIndex = -1
+      }, */
+      enter({next}) {
+        console.log(next.container);
+        console.log(barba.wrapper);
+        let tl = anime.timeline({
+          easing: 'easeOutExpo',
+          duration: 400
+        })
+        .add({ 
+          targets: barba.wrapper,
+          opacity: [0, 1],
+          duration: 10,
+          complete: function() {
+            barba.wrapper.style.transform = 'none';
+          }
+        })
+        .add({
+          targets: '.transition', 
+          translateX: [0, '100%'],
+          translateY: [0, 0]
+        }) 
+        return tl.finished;
+      }
   }]
 });
 
 barba.hooks.enter((page) => {
+  console.log(page);
   window.scrollTo(0, 0);
+  document.querySelector('body').classList.add('is-animating-b');
 });
- 
+
 barba.hooks.after((page) => {
+  console.log('page');
+
+  //add the classes of wordpress to the body-element
   const xy = page.next.html; 
   let response = xy.replace(/(<\/?)body( .+?)?>/gi, '$1notbody$2>', xy);
   let matches = response.match(/notbody class=\"(.*?)\"/);  //returns array
@@ -197,50 +218,3 @@ barba.hooks.after((page) => {
 barba.hooks.before(() => {
   document.querySelector('body').classList.add('is-animating');
 });
-
-
-
-/* barba.init({
-  transitions: [{
-    sync: true, // sync the transitions up so they occur concurrently
-    appear({ // when you first load the website.
-      current,
-    }) {
-      const targets = current.container; // target the current page container.
-      const a = anime({ // new animations via anime js
-        targets, // our current container
-        opacity: [0, 1], // change opacity from 0 to 1.
-        duration: 1500, // time in ms
-        easing: 'linear', // easing function
-      });
-
-      return a.finished;
-    },
-    leave({ // leaving the current page
-      current,
-    }) {
-      const targets = current.container; // target current page
-      const a = anime({ // new animation
-        targets, // current page
-        opacity: [1, 0], // fade out from 1 to 0 opacity
-        duration: 1500, //time in ms
-        easing: 'linear', // easing function
-      });
-
-      return a.finished;
-    },
-    enter({ // entering the next page
-      next,
-    }) {
-      const targets = next.container; // target the container of the next page
-      const a = anime({ // new animation
-        targets, // next page
-        opacity: [0, 1], // fade in from 0 to 1 opacity
-        duration: 1500, // time in ms
-        easing: 'linear', // easing function
-      });
-
-      return a.finished;
-    },
-  }],
-}); */

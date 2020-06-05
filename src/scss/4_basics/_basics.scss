@@ -194,18 +194,23 @@ strong{
   color: $color-white;
 }
 
-.transition {
+.transition { 
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw; 
   height: 100vh;
-  //background-color: $color-blue-sky;
+  background-color: $color-blue-sky;
   transform: translateX(-100%);
   display: block;
+  z-index: 1000000;
 }
 
-.test {
+.is-animating-b {
+  background-color: $color-blue-sky;
+}
+
+.end-transition-out { 
   position: absolute;
   z-index: -1 !important;
 }
