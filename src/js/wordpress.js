@@ -1,5 +1,7 @@
 // Bundle theme module
 import ToTop from './Classes/ToTop';
+import Helper from "./Classes/Helper";
+
 import ChangeClassOnScroll from './Classes/ChangeClassOnScroll';
 import Sticky from './../../node_modules/sticky-js';
 import isInViewport from './Classes/isInViewport';
@@ -71,6 +73,7 @@ const initAll = {
 
     new Menu();
 
+    Helper.addClass(document.querySelector('body'), 'is-loaded')
     //new Pagetransition();
   }
 };
@@ -198,23 +201,22 @@ barba.init({
 });
 
 barba.hooks.enter((page) => {
-  console.log(page);
   window.scrollTo(0, 0);
   document.querySelector('body').classList.add('is-animating-b');
 });
 
 barba.hooks.after((page) => {
-  console.log('page');
-
   //add the classes of wordpress to the body-element
   const xy = page.next.html; 
   let response = xy.replace(/(<\/?)body( .+?)?>/gi, '$1notbody$2>', xy);
   let matches = response.match(/notbody class=\"(.*?)\"/);  //returns array
   let bodyClasses = matches[1];
   document.querySelector('body').classList = bodyClasses;
+  document.querySelector('body').classList.add('is-loaded');
   initAll.init(); 
 });
 
 barba.hooks.before(() => {
+  document.querySelector('body').classList.remove('is-loaded');
   document.querySelector('body').classList.add('is-animating');
 });
