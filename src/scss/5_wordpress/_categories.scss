@@ -53,7 +53,8 @@
         #icon-streckenfliegen,
         #icon-flug-date {
             path,
-            circle {
+            circle,
+            line {
                 stroke: $color-primary;
             } 
         }

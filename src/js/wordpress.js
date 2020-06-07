@@ -1,6 +1,7 @@
 // Bundle theme module
-import ToTop from './Classes/ToTop';
 import Helper from "./Classes/Helper";
+import barba from '@barba/core';
+import anime from 'animejs/lib/anime.es.js';
 
 import ChangeClassOnScroll from './Classes/ChangeClassOnScroll';
 import Sticky from './../../node_modules/sticky-js';
@@ -11,18 +12,13 @@ import scrollToFirstSection from './Classes/scrollToFirstSection';
 import Menu from './Classes/Menu';
 import scrollOutHero from './Classes/scrollOutHero';
 import smoothscroll from 'smoothscroll-polyfill';
-//import Pagetransition from './Classes/Pagetransition';
-import barba from '@barba/core';
-import anime from 'animejs/lib/anime.es.js';
+import Ani from './Classes/Ani';
  
 // kick off the polyfill 
 smoothscroll.polyfill(); 
 
 const initAll = {
   init: () => {
-  
-    //new ToTop();
-
     new ChangeClassOnScroll({
       backgroundElement: '.hero',
       backgroundElement2: '.layout-bg',
@@ -73,8 +69,10 @@ const initAll = {
 
     new Menu();
 
+    new Ani();
+    
     Helper.addClass(document.querySelector('body'), 'is-loaded')
-    //new Pagetransition();
+    
   }
 };
 
@@ -114,7 +112,6 @@ barba.init({
       next.container.style.zIndex = -1
     }, */
     enter({next}) {
-      console.log(next);
        let tl = anime.timeline({
         easing: 'easeOutExpo',
         duration: 400

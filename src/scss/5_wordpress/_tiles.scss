@@ -156,5 +156,15 @@
             }
         }
     }
+
+    svg .strahl,
+    svg .strahl-2 {
+        transform-origin: center;
+    }
+    
+    svg {
+        transform-origin: center;
+        overflow: visible;
+    }
 }
 
