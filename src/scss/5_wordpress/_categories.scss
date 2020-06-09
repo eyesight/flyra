@@ -46,16 +46,17 @@
     }
     
     &__icon {
-        @include ld-margin-bottom($space-mm);
+        @include ld-margin-bottom($space-s);
 
         #icon-klassische-fluege,
         #icon-big-mountain-flights,
         #icon-streckenfliegen,
-        #icon-flug-date {
+        #heart #icon-flug-date {
             path,
             circle,
-            line {
-                stroke: $color-primary;
+            line,
+            #Icon_ionic-ios-heart { 
+                stroke: $color-primary !important;
             } 
         }
 

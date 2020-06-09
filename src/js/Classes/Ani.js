@@ -2,23 +2,31 @@ import anime from 'animejs/lib/anime.es.js';
 
 class Ani {
   constructor() {
-    this.bindEvents();
+    this.home = document.querySelector('body.home');
+    this.sun = document.querySelector('#sun');
+    this.mountain = document.querySelector('#mountain');
+    this.map = document.querySelector('#map');
+    this.heart = document.querySelector('#heart');
+    this.question = document.querySelector('#question');
+    
+    if(this.home) {
+      this.bindEvents();
+    }
   }
-
   bindEvents() {
-    document.querySelector('#sun').parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
+    this.sun.parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
       this.anisun(document.querySelectorAll('.tile svg .strahl'));
     });
-    document.querySelector('#mountain').parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
+    this.mountain.parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
       this.animountain(document.querySelectorAll('.tile svg#mountain'), document.querySelectorAll('.tile svg#mountain g'));
     });
-    document.querySelector('#map').parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
+    this.map.parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
       this.animap(document.querySelectorAll('.tile #map .point'));
     });
-    document.querySelector('#heart').parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
+    this.heart.parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
       this.aniheart(document.querySelector('.tile #heart #Icon_ionic-ios-heart'), document.querySelector('.tile #heart #Icon_ionic-ios-heart-2'));
     });
-    document.querySelector('#question').parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
+    this.question.parentNode.parentNode.parentNode.addEventListener("mouseenter", ()=> {
       this.aniquestion(document.querySelector('.tile #question circle'));
     });
   }

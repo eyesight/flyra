@@ -21,6 +21,13 @@
             transition: all 0.5s ease 0.3s;
         }
     }
+
+    &.site-404__title-h1 {
+        .title-h1__text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 } 
 
 .title-h2 {
