@@ -1,5 +1,6 @@
 .go-to-button {
     @include font-size($font-settings-go-down-btn);
+    @include font($type-face-light, $font-weight);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

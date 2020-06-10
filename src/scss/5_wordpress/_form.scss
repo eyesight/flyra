@@ -161,6 +161,7 @@
         border: none;
         border-bottom: 1px solid $color-white;
         @include font-size($font-settings-body);
+        @include font($type-face-light, $font-weight);
         color: $color-white;
         z-index: 100;
 
@@ -197,6 +198,7 @@
     }
     
     textarea {
+        @include font($type-face-light, $font-weight);
         background: transparent;
         border: 1px solid $color-white;
         min-height: 250px;
