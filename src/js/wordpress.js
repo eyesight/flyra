@@ -211,6 +211,8 @@ barba.hooks.after((page) => {
   document.querySelector('body').classList = bodyClasses;
   document.querySelector('body').classList.add('is-loaded');
   initAll.init(); 
+  ga('set', 'page', window.location.pathname);
+  ga('send', 'pageview');
 });
 
 barba.hooks.before(() => {

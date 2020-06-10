@@ -98,6 +98,7 @@
         height: 20px;
         @include flexbox(row, wrap, flex-start, center);
         @include font-size($font-settings-links);
+        @include font($type-face-light, $font-weight);
         cursor: pointer;
         padding-left: 0;
     }

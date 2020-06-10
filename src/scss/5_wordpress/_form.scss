@@ -31,6 +31,7 @@
 
     .frm_html_container {
         @include ld-margin-bottom(20px, '.textbox');
+        z-index: 1;
 
         @include md-min {
             @include ld-margin-bottom(50px, '.textbox');
@@ -144,6 +145,7 @@
 
     .frm_full.vertical_radio {
         float: left;
+        z-index: 1000;
 
         .frm_checkbox {
             padding-top: 0;
