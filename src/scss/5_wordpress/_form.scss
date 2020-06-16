@@ -79,7 +79,7 @@
     }
 
     .frm_checkbox {
-        padding-top: 50px;
+        padding-top: 0px;
         padding-bottom: 50px;
         float: left;
         width: 100%;
@@ -267,6 +267,18 @@
         &:hover::after {
             transform: translateX(10px);
             transition: transform 0.3s ease;
+        }
+    }
+
+    .frm_html_container {
+        @include md-max {
+            z-index: 1;
+        }
+    }
+
+    .vertical_radio {
+        @include md-max {
+            z-index: 10;
         }
     }
 }
