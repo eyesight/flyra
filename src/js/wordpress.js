@@ -71,7 +71,7 @@ const initAll = {
 
     new Ani();
     
-    Helper.addClass(document.querySelector('body'), 'is-loaded')
+    Helper.addClass(document.querySelector('body'), 'is-loaded');
     
   }
 };
@@ -209,10 +209,13 @@ barba.hooks.after((page) => {
   let matches = response.match(/notbody class=\"(.*?)\"/);  //returns array
   let bodyClasses = matches[1];
   document.querySelector('body').classList = bodyClasses;
-  document.querySelector('body').classList.add('is-loaded');
   initAll.init(); 
   ga('set', 'page', window.location.pathname);
   ga('send', 'pageview');
+
+  if(bodyClasses.match('category-about') && bodyClasses.match('category-about')[0]) {
+    location.reload();
+  }
 });
 
 barba.hooks.before(() => {
