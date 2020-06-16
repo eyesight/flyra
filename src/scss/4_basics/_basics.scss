@@ -215,6 +215,10 @@ strong{
   z-index: -1 !important;
 }
 
+.home .container {
+  overflow: hidden;
+}
+
 /*[data-barba='wrapper'] {
   position: relative;
 }
